@@ -1,0 +1,21 @@
+/*卡片统一样式*/
+.card{
+    margin-bottom: 10px;
+    background: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    box-sizing: border-box;
+}
+
+/*按钮统一样式*/
+.button{
+    padding: 0 16px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #8590a6;
+    text-align: center;
+    cursor: pointer;
+    background: none;
+    border: 1px solid;
+    border-radius: 3px;
+}

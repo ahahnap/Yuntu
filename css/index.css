@@ -1,0 +1,414 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-size: 15px;
+	background: #f6f6f6
+}
+
+li{
+	list-style-type: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+/*顶部栏*/
+.top{
+	min-width: 1032px;
+	height: 52px;
+	width: 100%;
+	background: white;
+	box-shadow: 0 1px 3px rgba(26,26,26,.1);
+	/*position: fixed;
+	top:0;
+	z-index: 100;*/
+}
+
+.top .top-inner{
+	width:1000px;
+	height: 52px;
+	margin: 0 auto;
+	padding: 0 16px;
+	display: flex;
+	align-items: center;
+}
+
+/*LOGO*/
+.top .top-inner .top-icon{
+	display: block;
+	width: 64px;
+	height: 30px;
+}
+
+/*导航*/
+.top .top-inner .nav{
+	height: 30px;
+	width: 165px;
+	margin: auto 27px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.top .top-inner .nav a{
+	color: #8590a6;
+}
+
+.top .top-inner .nav .is-active{
+	color: #444444;
+}
+
+.top .top-inner .nav .isnot-active:hover{
+	color: #175199;
+}
+
+/*搜索框*/
+.top .top-inner .searchBar{
+	width: 326px;
+	height: 34px;
+	padding: 4px 10px;
+	border: 1px solid #ebebeb;
+	border-radius: 3px;
+	background: #f6f6f6;
+	display: flex;
+}
+
+.top .top-inner .searchBar input{
+	flex: 1;
+	border: none;
+	background: #f6f6f6;
+	outline: none;
+	font-size: 13px;
+}
+
+.top .top-inner .searchBar button{
+	width: 25px;
+	height: 25px;
+	border: none;
+	background: #f6f6f6;
+}
+
+.top .top-inner .searchBar button .fa-search{
+	font-size: 15px;
+	color: #8590a6;
+}
+
+/*提问按钮*/
+.top .top-inner .questBtn{
+	height: 32px;
+	margin: auto 16px;
+	padding: 0 14px;
+	border: 1px solid #0084ff;
+	border-radius: 3px;
+	background: #0084ff;
+	color: #ffffff;
+}
+
+.top .top-inner .questBtn:hover{
+	background: #0077e6;
+}
+
+/*登录用户信息*/
+.top .top-inner .existUser{
+	flex: 1;
+	display: flex;
+	justify-content: flex-end;
+	position: relative;
+}
+
+.top .top-inner .existUser span{
+	margin: auto 20px;
+	line-height: 32px;
+	color: #0084ef;
+	cursor: default;
+}
+
+.top .top-inner .existUser .userIcon{
+	border: none;
+	outline: none;
+}
+
+.top .top-inner .existUser .userIcon:focus~.btnContent{
+	display: block;
+}
+
+.top .top-inner .existUser .userIcon img{
+	width: 30px;
+	height: 30px;
+	border-radius: 3px;
+}
+
+.top .top-inner .existUser .btnContent{
+	position: absolute;
+	top: 55px;
+	right: -85px;
+	z-index: 20;
+	padding: 0 5px;
+	transition: 0.3s;
+	display: none;
+}
+
+.top .top-inner .existUser .btnContent .content-arrow-bg{
+	border-style: solid;
+	border-width: 7px;
+	border-color: transparent;
+	border-bottom-color: #ffffff;
+	position: absolute;
+	top: -13px;
+	left: 20px;
+}
+
+.top .top-inner .existUser .btnContent .content-inner{
+	padding: 6px 0;
+	border-radius: 4px;
+	background: #ffffff;
+	box-shadow: 0 5px 20px rgba(26,26,26,0.1);
+}
+
+.top .top-inner .existUser .btnContent .content-inner a{
+	display: block;
+	padding: 0 20px;
+	line-height: 36px;
+	color: #8590a6;
+}
+
+.top .top-inner .existUser .btnContent .content-inner a:hover{
+	background: #f6f6f6;
+}
+
+/*----------main----------*/
+.main{
+	height: 2000px;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    width: 1000px;
+    padding: 0 16px;
+    margin: 10px auto;
+}
+
+/*侧边栏*/
+.main .sidebar{
+	width: 275px;
+}
+
+.main .sidebar .map{
+	width: inherit;
+	height: 275px;
+	margin-bottom: 10px;
+	background: #0084C7;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+}
+
+.main .sidebar .map img{
+	width: inherit;
+}
+
+.main .sidebar .nav-list{
+    margin-bottom: 10px;
+    background: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    box-sizing: border-box;
+}
+
+.main .sidebar .nav-list ul{
+	width: 100%;
+    padding: 8px 0;
+}
+
+.main .sidebar .nav-list ul li a{
+	display: flex;
+	align-items: center;
+    padding: 0 20px;
+    height: 40px;
+    font-size: 14px;
+    color: #8590a6;
+}
+
+.main .sidebar .nav-list ul li a i{
+	margin: auto 15px;
+}
+
+.main .sidebar .nav-list ul li a:hover{
+	background: #f6f6f6;
+}
+
+/*主体内容*/
+.main .main-col{
+	width: 684px;
+	margin-right: 10px;
+}
+
+.main .main-col .item{
+	position: relative;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    box-sizing: border-box;
+}
+
+.main .main-col .item .byLine{
+	width: 654px;
+	margin-bottom: 14px;
+	display: flex;
+   justify-content: flex-start;
+   position: relative;
+}
+
+.main .main-col .item .byLine .profile-photo{
+	width: 24px;
+	height: 24px;
+}
+
+.main .main-col .item .byLine .author-name{
+	margin-left: 10px;
+	font-size: 15px;
+	font-weight: 600;
+	color: #444444;
+}
+
+.main .main-col .item .byLine .author-badge{
+	margin-left: 10px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 24px;
+    font-size: 14px;
+    color: #646464;
+}
+
+.main .main-col .item .byLine .author-badge::before{
+	margin-right: 5px;
+	content: ",";
+}
+
+.main .main-col .item .byLine .localtion{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20px;
+	border: none;
+	background: none;
+}
+
+.main .main-col .item .byLine .localtion i{
+	font-size: 18px;
+	color: #8590a6;
+}
+
+.main .main-col .item .byLine .localtion:hover i{
+	color: #d14242;
+}
+
+.main .main-col .item .title{
+	font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-top: -4px;
+    margin-bottom: 2px;
+}
+
+.main .main-col .item .title a{
+	color:inherit;
+}
+
+.main .main-col .item .title a:hover{
+    color: #175199;
+}
+
+.main .main-col .item .content{
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.main .main-col .item .content .content-img{
+	width: 190px;
+	height: 105px;
+	overflow: hidden;
+}
+
+.main .main-col .item .content .content-img img{
+	width: inherit;
+	height: auto;
+}
+
+.main .main-col .item .content .content-inner{
+	width: 446px;
+	height: 100px;
+	margin-left: 10px;
+	overflow: hidden;
+}
+
+/*只有文章没有图片*/
+.main .main-col .item .content .content-article{
+	width: 95%;
+	height: 100px;
+	overflow: hidden;
+}
+
+.main .main-col .item .actions{
+	width: 100%;
+	margin-top: 15px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.main .main-col .item .actions .btn{
+	display: inline-block;
+    padding: 0 14px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #0084ff;
+    text-align: center;
+    cursor: pointer;
+    background: rgba(0,132,255,.1);
+    border: none;
+    border-radius: 3px;
+    outline: none;
+}
+
+.main .main-col .item .actions .btn i{
+	font-size: 18px;
+}
+
+.main .main-col .item .actions .btn:hover{
+	background-color: rgba(0,132,255,.15);
+}
+
+.main .main-col .item .actions .comment{
+	margin-left: 24px;
+	color: #8590a6;
+}
+
+.main .main-col .item .actions .comment:hover{
+	color:rgb(119,131,156);
+}
+
+.main .main-col .item .actions .collect{
+	margin-left: 24px;
+	color: #8590a6;
+}
+
+.main .main-col .item .actions .collect:hover{
+	color:rgb(119,131,156);
+}
+
+.main .main-col .item .actions .collection-add{
+	
+}
+
+.main .main-col .item .actions .collection-del{
+	display: none;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<link href="css/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<script src="js/jquery-3.2.1.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/drag.css"  />
+		<script src="js/drag.js"></script>
+
+		<!--滑动验证码-->
+		<script>
+			var startTime = 0;
+			var endTime = 0;
+			var numTime = 0;
+			$(function() {
+				var slider = new SliderUnlock("#slider", {
+					successLabelTip: "验证成功！"
+				}, function() {
+					var sli_width = $("#slider_bg").width();
+					//								alert("验证成功");
+					endTime = nowTime();
+					numTime = endTime - startTime;
+					endTime = 0;
+					startTime = 0;
+					// 获取到滑动使用的时间 滑动的宽度
+					//								alert(numTime);
+					//								alert(sli_width);
+				});
+				slider.init();
+			})
+			/**
+			 * 获取时间精确到毫秒
+			 */
+			function nowTime() {
+				var myDate = new Date();
+				var H = myDate.getHours(); //获取小时
+				var M = myDate.getMinutes(); //获取分钟
+				var S = myDate.getSeconds(); //获取秒
+				var MS = myDate.getMilliseconds(); //获取毫秒
+				var milliSeconds = H * 3600 * 1000 + M * 60 * 1000 + S * 1000 + MS;
+				return milliSeconds;
+			}
+		</script>
+		
+		<!--登陆按钮-->
+		<script>
+			$(function(){
+//				var $name = $("#name");
+				var $psw = $("#psw");
+//				var $tipname = $("#tip-name");
+				var $tippsw = $("#tip-psw");
+				
+				$("#submit-btn").click(function(){
+					if($("#name").val() == ""){
+//						alert("name null.");
+						$("#tip-name").show();
+						$("#tip-name").delay(5000).hide(0);
+//						var timeout1 = setTimeout(function(){
+//							$("#tip-name").show();
+//						}, 3000);
+						return false;
+					}
+					if($psw.val() == ""){
+						$tippsw.show();
+						$tippsw.delay(5000).hide(0);
+						return false;
+					}
+					
+					if($("#labelTip").text() == "拖动滑块验证"){
+						$("#tip-drag").show();
+						$("#tip-drag").delay(5000).hide(0);
+						return false;
+					}
+					
+					$.ajax({
+						type:"post",
+						url:"",
+						data:{
+							username: $("#name").val();
+							psw: $("#psw").val();
+						},
+						dataType:'josnp',
+						success:function(data){
+							var result = data;
+							// 用户名不存在，用 0 表示
+							if(result == 0){
+								$("#non-existent").show();
+								$("#non-existent").delay(5000).hide(0);
+								return false;
+							}
+							// 用户名或者密码不正确，用 1 表示
+							if(result == 1){
+								$("#error").show();
+								$("#error").delay(5000).hide(0);
+								return false;
+							}
+							// 成功跳转，用 2 表示
+							if(result == 2){
+								localtion.href = "";
+							}
+						}
+					});
+					
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<div class="sign">
+			<div class="logo">
+				<a href="index.html">
+					<img src="img/logo.png" />
+				</a>
+			</div>
+			<div class="main">
+				<h4 class="title">
+					<a class="active">登录</a>
+					<div class="spliter"></div>
+					<a href="sign_up.html">注册</a>
+				</h4>
+
+				<form action="">
+					<div class="nickname">
+						<i class="fa fa-user fa-lg"></i>
+						<input type="text" id="name" placeholder="用户名"/>
+					</div>
+					<div class="tips name-null" id="tip-name">
+						<div class="tip-arrow-border"></div>
+						<div class="tip-arrow-bg"></div>
+						<div class="tip-inner">
+							<i class="fa fa-exclamation-triangle fa-lg"></i>
+							<span>请输入用户名</span>
+						</div>
+					</div>
+					
+					<div class="password in">
+						<i class="fa fa-lock fa-lg"></i>
+						<input type="password" id="psw" placeholder="密码" />
+					</div>
+					<div class="tips psw-null" id="tip-psw">
+						<div class="tip-arrow-border"></div>
+						<div class="tip-arrow-bg"></div>
+						<div class="tip-inner">
+							<i class="fa fa-exclamation-triangle fa-lg"></i>
+							<span>请输入密码</span>
+						</div>
+					</div>
+
+					<div id="slider">
+						<div id="slider_bg"></div>
+						<span id="label">
+							<i class="fa fa-angle-double-right"></i>
+						</span>
+						<span id="labelTip">拖动滑块验证</span>
+					</div>
+					<div class="tips drag-null" id="tip-drag">
+						<div class="tip-arrow-border"></div>
+						<div class="tip-arrow-bg"></div>
+						<div class="tip-inner">
+							<i class="fa fa-exclamation-triangle fa-lg"></i>
+							<span>请完成验证</span>
+						</div>
+					</div>
+
+					<div class="option">
+						<div class="remember">
+							<input type="checkbox" id="rebme" /><span>记住我</span>
+						</div>
+						<a href="" class="forget">忘记密码？</a>
+					</div>
+					<input type="submit" name="commit" value="登录" class="sign-in-btn" id="submit-btn"/>
+				</form>
+
+			</div>
+			
+			<div class="alert" id="non-existent" >
+				<span>该用户不存在，请先注册</span>
+			</div>
+			<div class="alert" id="error" >
+				<span>登录失败，用户名或密码不正确</span>
+			</div>
+		</div>
+	</body>
+
+</html>

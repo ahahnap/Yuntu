@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>首页 - 云途</title>
+		<link rel="stylesheet" href="css/amazeui.css" />
+		<link href="css/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/amazeui.js"></script>
+		<script src="js/enlargement.js"></script>
+		<script src="js/theia-sticky-sidebar.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.sidebar')
+					.theiaStickySidebar({
+						additionalMarginTop: 62
+					});
+			});
+			
+			function voteup(){
+				
+			}
+			
+			function votedown(){
+				
+			}
+			
+			
+		</script>
+	</head>
+
+	<body>
+
+		<div data-am-sticky class="top">
+			<div class="top-inner">
+				<!-- LOGO -->
+				<a href="#" class="top-icon">
+					<img src="img/logo.png" width="64px" height="30px" />
+				</a>
+				<!-- 导航按钮 -->
+				<ul class="nav">
+					<li>
+						<a href="#" class="is-active">首页</a>
+					</li>
+					<li>
+						<a href="#" class="isnot-active">发现</a>
+					</li>
+					<li>
+						<a href="#" class="isnot-active">话题</a>
+					</li>
+				</ul>
+				<!-- 搜索框 -->
+				<div class="searchBar">
+					<input type="text" name="searchContent" placeholder="搜索你感兴趣的内容..." />
+					<button type="submit">
+						<i class="fa-search"></i>						
+					</button>
+				</div>
+				<!-- 提问按钮 -->
+				<button class="questBtn">提问</button>
+				<!-- 登录用户 -->
+				<div class="existUser">
+					<span class="userNmae">TestName</span>
+					<button class="userIcon">
+						<img src="img/a.jpeg" width="30px" height="30px" />
+					</button>
+					<div class="btnContent">
+						<div class="content-arrow-bg"></div>
+						<div class="content-inner">
+							<a href="#">
+								<i class="fa fa-user"></i> 我的主页
+							</a>
+							<a href="#">
+								<i class="fa fa-cog"></i> 设置
+							</a>
+							<a href="#">
+								<i class="fa fa-power-off"></i> 退出
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main wrapper">
+			<div class="main-col">
+				<div class="item">
+					<div class="byLine">
+						<!--头像-->
+						<img class="profile-photo" src="img/a.jpeg" />
+						<!--用户名-->
+						<a href="#" class="author-name">黄恢弘</a>
+						<!--用户简介-->
+						<span class="author-badge">中医馆馆主、武术家</span>
+						<!-- 定位 -->
+						<button class="localtion">
+							<i class="fa fa-location-arrow"></i>
+						</button>
+					</div>
+					<!--文章标题-->
+					<h2 class="title">
+						<a href="#">有哪些精彩岛屿令你念念不忘？</a>
+					</h2>
+					<!-- 文章内容 -->
+					<div class="content">
+						<div class="content-img">
+							<img src="img/pic1.png" class="pimg" />
+						</div>
+						<div class="content-inner">
+							<span>皇帝岛在普吉岛的南面，相距12公里，快艇需要30-40分钟左右。与普吉岛其他热门或不那么热门的景点相比，皇帝岛算是一个非常新的面孔。岛上不仅有优美完整的天然热带岛屿风光，珊瑚礁的海岸景色同样让人难忘。由于开发较晚，到此的游客数量比较少...</span>
+						</div>
+					</div>
+					<!-- 各种操作 -->
+					<div class="actions">
+						<span>
+							<!-- 赞同 -->
+							<button class="btn vote-up" onclick="voteup()">
+								<i class="fa fa-caret-up "></i>
+								<span>233</span>
+							</button>
+							<!-- 反对 -->
+							<button class="btn vote-down" onclick="votedown()">
+								<i class="fa fa-caret-down"></i>
+							</button>
+						</span>
+						<!-- 评论 -->
+						<a href="#" class="comment">
+							<i class="fa fa-comment"></i>
+							<span>108 条评论</span>
+						</a>
+						<!-- 收藏 -->
+						<a href="#" class="collect collection-add">
+							<i class="fa fa-star-o"></i>
+							<span>添加收藏</span>
+						</a>
+						<!--<a href="#" class="collect collection-del">
+							<i class="fa fa-star"></i>
+							<span>取消收藏</span>
+						</a>-->
+						
+					</div>
+				</div>
+				<div class="item">
+					<div class="byLine">
+						<!--头像-->
+						<img class="profile-photo" src="img/a.jpeg" />
+						<!--用户名-->
+						<a href="#" class="author-name">安建楠</a>
+						<!--用户简介-->
+						<span class="author-badge">旅行爱好者</span>
+						<!-- 定位 -->
+						<button class="localtion">
+							<i class="fa fa-location-arrow"></i>
+						</button>
+					</div>
+					<!--文章标题-->
+					<h2 class="title">
+						<a href="#">夏威夷，一个不想离开的岛</a>
+					</h2>
+					<!-- 文章内容 -->
+					<div class="content">
+						<div class="content-article">
+							<span>
+								早做好决定的周末夏威夷之行，就在起飞🛫️降落🛬️，下雨🌧️晴朗☀️的过程，享受每一秒的新鲜空气与快乐时光。
+								夏威夷的美味佳肴还有满满香甜的水果，以及永远都在胃里占一席之地的冰沙。
+								第一次开一辆连驾驶座都上不去的吉普车 :-) 第一次的黄鳍金枪鱼，缓缓味蕾的消化。
+								第一次愿意为了行程而不计一切阻碍。...
+							</span>
+						</div>
+					</div>
+					<!-- 各种操作 -->
+					<div class="actions">
+						<span>
+							<!-- 赞同 -->
+							<button class="btn vote-up" onclick="voteup()">
+								<i class="fa fa-caret-up "></i>
+								<span>233</span>
+							</button>
+							<!-- 反对 -->
+							<button class="btn vote-down" onclick="votedown()">
+								<i class="fa fa-caret-down"></i>
+							</button>
+						</span>
+						<!-- 评论 -->
+						<a href="#" class="comment">
+							<i class="fa fa-comment"></i>
+							<span>108 条评论</span>
+						</a>
+						<!-- 收藏 -->
+						<a href="#" class="collect collection-add">
+							<i class="fa fa-star-o"></i>
+							<span>添加收藏</span>
+						</a>
+						<a href="#" class="collect collection-del">
+							<i class="fa fa-star"></i>
+							<span>取消收藏</span>
+						</a>
+						
+					</div>
+				</div>
+			</div>
+			<div class="sidebar">
+				<div class="theiaStickySidebar">
+					<div class="map">
+						<img src="img/map.png" />
+					</div>
+					<div class="nav-list">
+						<ul>
+							<li>
+								<a href="#">
+									<i class="fa fa-file-text"></i>
+									我的文章
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-question" style="font-size: 17px;margin-right: 18px;"></i>
+									我的问题
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-star"></i>
+									我的收藏
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-heart"></i>
+									我的关注
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

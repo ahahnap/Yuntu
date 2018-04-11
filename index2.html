@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Yuntu</title>
+		<link rel="stylesheet" type="text/css" href="css/main2.css" />
+		<link rel="stylesheet" type="text/css" href="css/fontawesome/css/font-awesome.min.css"/>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+		<script>
+			$(function(){
+				changePic();/*页面打开时先调整一下轮播图片位置*/
+				
+				/*浏览器窗口变化时调整轮播图片位置*/
+//				$(window).resize(function(){
+//					changePic();
+//				});
+				window.onresize = function(){
+					changePic();
+				}
+				
+				/*通过计算图片高度设置定位*/
+				function changePic(){
+//					var dis;
+//					$(".carousel-pic").on("load",function(){
+//						dis = $(this).height();
+//						console.log(dis);
+//					});
+					var dis = $(".carousel-pic").height();/*要疯了，有时候获取不到高度啊啊啊*/
+					console.log(dis);
+					dis = -(dis / 2 - 240);
+					dis = Math.round(dis);
+					dis = dis + "px";
+					console.log(dis);
+					$(".carousel-pic").css("top", dis);
+				}
+				
+				var index = -1;// 图片下标
+				/*图片轮播方法*/
+				function rotate(){
+					index++;
+					if(index > 4){
+						index = 0;
+					}
+					$(".carousel ul").children("li").eq(index).fadeIn(300).siblings().fadeOut(300);
+					$(".controller ul li").eq(index).addClass("active").siblings().removeClass("active");
+//					console.log(index);
+				}
+				function moveleft(){
+					index--;
+					if(index == -1){
+						index = 4;
+					}
+					$(".carousel ul").children("li").eq(index).fadeIn(300).siblings().fadeOut(300);
+				}
+				var timer = setInterval(rotate,10000);
+				
+//				clearInterval(timer);// 清除一下定时器
+
+				/*手动控制图片移动*/
+				$(".prev").click(function(){
+					clearInterval(timer);
+					moveleft();
+					$(".controller ul li").eq(index).addClass("active").siblings().removeClass("active");
+					timer = setInterval(rotate,10000);
+				});
+				$(".next").click(function(){
+					clearInterval(timer);
+					rotate();
+					$(".controller ul li").eq(index).addClass("active").siblings().removeClass("active");
+					timer = setInterval(rotate,10000);
+				});
+				
+				$(".carousel ul").children("li").eq(0).show().siblings().hide(0);
+				$(".controller ul li").eq(0).addClass("active");
+				$(".controller ul li").click(function(){
+					$(this).addClass("active").siblings().removeClass("active");
+					index = $(this).index();
+					$(".carousel ul").children("li").eq(index).fadeIn(300).siblings().fadeOut(300);
+				})
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<img src="img/logo.png" width="175px" height="55px"/>
+				<div class="items">
+					<a href="#">登陆/注册</a>
+					<a href="#">问题反馈</a>
+				</div>
+			</div>
+			
+			<div class="main">
+				<div class="banner">
+					<div class="carousel">
+						<ul>
+							<li>
+								<a>
+									<img src="img/rotate1.jpg" class="carousel-pic"/>
+									<p class="desc"></p>
+								</a>
+							</li>
+							<li>
+								<a>
+									<img src="img/rotate2.jpg" class="carousel-pic"/>
+									<p class="desc"></p>
+								</a>
+							</li>
+							<li>
+								<a>
+									<img src="img/rotate1.jpg" class="carousel-pic"/>
+									<p class="desc"></p>
+								</a>
+							</li>
+							<li>
+								<a>
+									<img src="img/rotate3.jpg" class="carousel-pic"/>
+									<p class="desc"></p>
+								</a>
+							</li>
+							<li>
+								<a>
+									<img src="img/rotate4.jpg" class="carousel-pic"/>
+									<p class="desc"></p>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="controller">
+						<a class="prev">
+							<i class="fa fa-chevron-left"></i>
+						</a>
+						<a class="next">
+							<i class="fa fa-chevron-right"></i>
+						</a>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+				</div>
+				<div class="index-block">
+					
+				</div>
+			</div>
+			
+			<div class="footer">
+				
+			</div>
+			
+		</div>
+	</body>
+</html>

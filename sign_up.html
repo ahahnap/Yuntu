@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="js/jquery-3.2.1.min.js"></script>
+		
+		<script>
+			$(function(){
+				var isNameOk = 0;
+				var isPswOk = 0;
+				var isEmailOk = 0;
+				$("#username").blur(function(){
+					if($("#username").val() == ""){
+						$("#tip-name-null").show();
+						$("#tip-name-null").delay(5000).hide(0);
+					}else{
+						$.get("",
+							{username: $("#username").val()},
+							function(data){
+								var result = data;
+								if(data == 0){
+									$("#username").val("");
+									$("#tip-name-exist").show();
+									$("#tip-name-exist").delay(5000).hide(0);
+								}
+								if(data == 1){
+									isNameOk = 1;
+								}
+							}
+						)
+					}
+				})
+				
+				$("#psw").blur(function(){
+					if($("#psw").val() == ""){
+						$("#tip-psw-null").show();
+						$("#tip-psw-null").delay(5000).hide(0);
+					}else{
+						if($("#psw").val().length < 8 || $("#psw").val().length > 16){
+							$("#psw").val("");
+							$("#tip-psw-len").show();
+							$("#tip-psw-len").delay(5000).hide(0);
+						}else{
+							isPswOk = 1;
+						}
+					}
+				})
+				
+				$("#email").blur(function(){
+					if($("#email").val() == ""){
+						$("#tip-email-null").show();
+						$("#tip-email-null").delay(5000).hide(0);
+					}else{
+						var reg = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+ 						if(!reg.test($("#email").val())){
+ 							$("#email").val("");
+ 							$("#tip-email-format").show();
+							$("#tip-email-format").delay(5000).hide(0);
+ 						}else{
+ 							isEmailOk = 1;
+ 						}
+					}
+				})
+				
+				$(".sign-up-btn").click(function(){
+					if(isNameOk == 1 && isPswOk == 1 && isEmailOk == 1){
+						$.ajax({
+							type:"post",
+							url:"",
+							data:{
+								username: $("#username").val(),
+								psw: $("#psw").val(),
+								email: $("#email").val()
+							},
+							dataType:'jsonp',
+							success:function(data){
+								localtion.href = "";
+							}
+						});
+					}else{
+						return false;
+					}
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div class="sign">
+			<div class="logo">
+				<a href="index.html">
+					<img src="img/logo.png" />
+				</a>
+			</div>
+			<div class="main">
+				<h4 class="title">
+					<a href="sign_in.html">登录</a>
+					<div class="spliter"></div>
+					<a class="active" href="sign_up.html">注册</a>
+				</h4>
+				
+				<form action="">
+					<div class="nickname">
+						<i class="fa fa-user-o"></i>
+						<input type="text" id="username" placeholder="你的昵称" />
+					</div>
+					<div class="tips name-null" id="tip-name-null">
+						<div class="tip-arrow-border"></div>
+						<div class="tip-arrow-bg"></div>
+						<div class="tip-inner">
+							<i class="fa fa-exclamation-triangle fa-lg"></i>
+							<span>请输入用户名</span>
+						</div>
+					</div>
+					<div class="tips name-exist" id="tip-name-exist">
+						<div class="tip-arrow-border"></div>
+						<div class="tip-arrow-bg"></div>
+						<div class="tip-inner">
+							<i class="fa fa-exclamation-triangle fa-lg"></i>
+							<span>该用户名已存在</span>
+						</div>
+					</div>
+					
+					
+					<div class="password">
+						<i class="fa fa-lock fa-lg"></i>
+						<input type="password" id="psw" placeholder="设置密码" />
+					</div>
+					<div class="tips psw-null" id="tip-psw-null">
+						<div class="tip-arrow-border"></div>
+						<div class="tip-arrow-bg"></div>
+						<div class="tip-inner">
+							<i class="fa fa-exclamation-triangle fa-lg"></i>
+							<span>请输入密码</span>
+						</div>
+					</div>
+					<div class="tips psw-len" id="tip-psw-len">
+						<div class="tip-arrow-border"></div>
+						<div class="tip-arrow-bg"></div>
+						<div class="tip-inner">
+							<i class="fa fa-exclamation-triangle fa-lg"></i>
+							<span>请输入 8-16 位密码</span>
+						</div>
+					</div>
+					
+					
+					<div class="email">
+						<i class="fa fa-envelope-o"></i>
+						<input type="email" id="email" placeholder="输入邮箱" />
+					</div>
+					<div class="tips email-null" id="tip-email-null">
+						<div class="tip-arrow-border"></div>
+						<div class="tip-arrow-bg"></div>
+						<div class="tip-inner">
+							<i class="fa fa-exclamation-triangle fa-lg"></i>
+							<span>请输入邮箱</span>
+						</div>
+					</div>
+					<div class="tips email-format" id="tip-email-format">
+						<div class="tip-arrow-border"></div>
+						<div class="tip-arrow-bg"></div>
+						<div class="tip-inner">
+							<i class="fa fa-exclamation-triangle fa-lg"></i>
+							<span>邮箱格式错误</span>
+						</div>
+					</div>
+					
+					
+					<input type="submit" value="注册" class="sign-up-btn"/>
+				</form>
+				
+				<p class="sign-up-msg">
+					点击“注册”即表示您同意并愿意遵守云途<br />
+					<a href="">用户协议</a>
+					和
+					<a href="">隐私政策</a>
+					。
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
