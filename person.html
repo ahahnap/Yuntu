@@ -10,7 +10,14 @@
 		<link rel="stylesheet" href="css/person.css" />
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/amazeui.js"></script>
+		<script src="js/theia-sticky-sidebar.js"></script>
 		<script>
+			$(document).ready(function() {
+				$('.sidebar')
+					.theiaStickySidebar({
+						additionalMarginTop: 62
+					});
+			});
 		</script>
 	</head>
 	<body>
@@ -24,7 +31,7 @@
 				<!-- 导航按钮 -->
 				<ul class="nav">
 					<li>
-						<a href="#" class="is-active">首页</a>
+						<a href="#" class="isnot-active">首页</a>
 					</li>
 					<li>
 						<a href="#" class="isnot-active">发现</a>
@@ -78,7 +85,7 @@
 				</p>
 				<p class="address">
 					<i class="fa fa-map-marker"></i>
-					<span>用户常驻地址</span>
+					<span>用户常驻地</span>
 				</p>
 			</div>
 			<button class="redact-btn button">
@@ -86,5 +93,47 @@
 			</button>
 		</div>
 		
+		<div class="main wrapper">
+			<div class="main-col">
+				
+			</div>
+			<div class="sidebar">
+				<div class="theiaStickySidebar">
+					<!-- 互相关注 -->
+					<div class="attention card">
+						<a href="#" class="follow">
+							<div class="inner">
+								<div class="name">关注了</div>
+								<strong class="num">0</strong>
+							</div>
+						</a>
+						<a href="#">
+							<div class="inner">
+								<div class="name">关注者</div>
+								<strong class="num">0</strong>
+							</div>
+						</a>
+					</div>
+					<!-- 导航 -->
+					<div class="tablist card">
+						<ul>
+							<li class="is-active">我的动态</li>
+							<li>
+								<a href="#">我的回答</a>
+							</li>
+							<li>
+								<a href="#">我的提问</a>
+							</li>
+							<li>
+								<a href="#">我的文章</a>
+							</li>
+							<li>
+								<a href="#">我的收藏</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

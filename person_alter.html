@@ -68,16 +68,56 @@
 		</div>
 		
 		<div class="editor card">
+			<!-- 返回主页按钮 -->
+			<a href="#" class="go-back">
+				返回我的主页&nbsp;&nbsp;
+				<i class="fa fa-angle-right"></i>
+			</a>
+			<!-- 修改头像 -->
 			<div class="profilephoto">
 				<img src="img/a.jpeg" />
 			</div>
 			<div class="content">
 				<h1 class="name">TestName</h1>
-
+				<!-- 修改个人资料 -->
+				<form action="" method="post">
+					<ul>
+						<li>
+							<span class="field-label">性别</span>
+							<div class="field-content">
+								<input type="radio" name="gender" value="男" checked />男
+								<span>&emsp;&emsp;</span>
+								<input type="radio" name="gender" value="女" />女
+							</div>
+						</li>
+						<li>
+							<span class="field-label">一句话介绍</span>
+							<div class="field-content">
+								<input type="text" name="introduction" class="field-input am-round" value="回显"/>
+							</div>
+						</li>
+						<li>
+							<span class="field-label">常驻城市</span>
+							<div class="field-content">
+								<input type="text" name="city" class="field-input am-round" value="回显"/>
+							</div>
+						</li>
+						<li>
+							<span class="field-label">邮箱</span>
+							<div class="field-content">
+								<input type="text" name="email" class="field-input am-round" value="回显"/>
+							</div>
+						</li>
+						<li>
+							<span class="field-label">生日</span>
+							<div class="field-content">
+								<input type="text" name="birthday" class="field-input am-round" value="回显"/>
+							</div>
+						</li>
+					</ul>
+					<input type="submit" value="保存个人资料" class="submit-btn button" />
+				</form>
 			</div>
-			<button class="redact-btn button">
-				<a href="#">编辑个人资料</a>
-			</button>
 		</div>
 		
 	</body>
