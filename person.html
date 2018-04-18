@@ -94,8 +94,72 @@
 		</div>
 		
 		<div class="main wrapper">
-			<div class="main-col">
-				
+			<div class="main-col card">
+				<!-- 动态显示 -->
+				<div class="list-header">
+					<h4>我的动态</h4>
+				</div>
+				<!-- 内容显示 -->
+				<div class="list-item">
+					<div class="item-meta">
+						<!-- 赞同了/提出了/发表了/收藏了 -->
+						<span class="meta-title">回答了</span>
+						<!-- 距今时间分/时/日/月/年 -->
+						<span>3小时前</span>
+					</div>
+					<div class="item-content">
+						<h2 class="content-title">
+							<a href="#">求广州好吃早茶推荐？</a>
+						</h2>
+						<div class="author-info">
+							<!--头像-->
+							<img class="profile-photo" src="img/a.jpeg" />
+							<!--昵称与简介-->
+							<div class="info-content">
+								<strong class="author-name">
+									<a href="#">TestName</a>
+								</strong>
+								<p class="sentence">一句话介绍</p>
+							</div>
+						</div>
+						<div class="content-inner">
+							<span>
+								说起广东早茶，不得不提“广州三大园林酒家”——南园、北园、泮溪酒家。
+								即便如今的出品，早已大不如前。早茶粤菜的餐厅新秀也是层出不穷，但气派园林经过历史沉淀的气韵是无法复制的。
+								如果有朋友来广州，我依然会推荐他们去上面几家。口味来讲，三家中还算不错的是南园酒家，始于1963年至今半个多世纪了。...
+							</span>
+						</div>
+						<!-- 各种操作 -->
+						<div class="actions">
+							<span>
+								<!-- 赞同 -->
+								<button class="btn vote-up" onclick="voteup()">
+									<i class="fa fa-caret-up "></i>
+									<span>233</span>
+								</button>
+								<!-- 反对 -->
+								<button class="btn vote-down" onclick="votedown()">
+									<i class="fa fa-caret-down"></i>
+								</button>
+							</span>
+							<!-- 评论 -->
+							<a href="#" class="comment">
+								<i class="fa fa-comment"></i>
+								<span>108 条评论</span>
+							</a>
+							<!-- 收藏 -->
+							<a href="#" class="collect collection-add">
+								<i class="fa fa-star-o"></i>
+								<span>添加收藏</span>
+							</a>
+							<!--<a href="#" class="collect collection-del">
+								<i class="fa fa-star"></i>
+								<span>取消收藏</span>
+							</a>-->
+							
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="sidebar">
 				<div class="theiaStickySidebar">

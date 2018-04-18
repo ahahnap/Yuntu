@@ -137,3 +137,132 @@
 .main .sidebar .tablist ul li a{
 	color: #333;
 }
+
+/*内容展示*/
+.main .main-col .list-header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    height: 50px;
+    margin: 0 20px;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.main .main-col .list-header h4{
+	margin: 0;
+}
+
+.main .main-col .list-item{
+	position: relative;
+	padding: 16px 20px;
+}
+
+.main .main-col .list-item .item-meta{
+	margin-bottom: 10px;
+	color: #8590a6;
+	display: flex;
+}
+
+.main .main-col .list-item .item-meta .meta-title{
+	flex: 1;
+}
+
+.main .main-col .list-item .item-content .content-title{
+	margin: 0;
+}
+
+.main .main-col .list-item .item-content .content-title a{
+    color: #1a1a1a;
+}
+
+.main .main-col .list-item .item-content .content-title a:hover{
+	color: #175199;
+}
+
+.main .main-col .list-item .item-content .author-info{
+    margin-top: 10px;
+    font-size: 15px;
+    color: #646464;
+    display: flex;
+    align-items: center;
+}
+
+.main .main-col .list-item .item-content .author-info .profile-photo{
+	width: 38px;
+	height: 38px;
+}
+
+.main .main-col .list-item .item-content .author-info .info-content{
+	margin-left: 14px;
+}
+
+.main .main-col .list-item .item-content .author-info .info-content .author-name a{
+    color: #646464;
+}
+
+.main .main-col .list-item .item-content .author-info .info-content .sentence{
+	margin: 0;
+	font-size: 14px;
+}
+
+.main .main-col .list-item .item-content .content-inner{
+	max-height: 100px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+
+.main .main-col .list-item .item-content .actions{
+	width: 100%;
+	margin-top: 15px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.main .main-col .list-item .item-content .actions .btn{
+	display: inline-block;
+    padding: 0 14px;
+    font-size: 14px;
+    line-height: 32px;
+    color: #0084ff;
+    text-align: center;
+    cursor: pointer;
+    background: rgba(0,132,255,.1);
+    border: none;
+    border-radius: 3px;
+    outline: none;
+}
+
+.main .main-col .list-item .item-content .actions .btn i{
+	font-size: 18px;
+}
+
+.main .main-col .list-item .item-content .actions .btn:hover{
+	background-color: rgba(0,132,255,.15);
+}
+
+.main .main-col .list-item .item-content .actions .comment{
+	margin-left: 24px;
+	color: #8590a6;
+}
+
+.main .main-col .list-item .item-content .actions .comment:hover{
+	color:rgb(119,131,156);
+}
+
+.main .main-col .list-item .item-content .actions .collect{
+	margin-left: 24px;
+	color: #8590a6;
+}
+
+.main .main-col .list-item .item-content .actions .collect:hover{
+	color:rgb(119,131,156);
+}
+
+.main .main-col .list-item .item-content .actions .collection-add{
+	
+}
+
+.main .main-col .list-item .item-content .actions .collection-del{
+	display: none;
+}
