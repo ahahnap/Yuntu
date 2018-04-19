@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>我的主页 - 云途</title>
+		<link rel="stylesheet" href="css/amazeui.css" />
+		<link href="css/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" href="css/question.css" />
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/amazeui.js"></script>
+		<script src="js/theia-sticky-sidebar.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.sidebar').theiaStickySidebar({
+					additionalMarginTop: 62
+				});
+
+				/*判断是否折叠回答*/
+				var height;
+				$(".answer-item").each(function(){
+					height = $(this).find("content").height();
+					if (height > 500) {
+						alert(height);
+					}
+				})
+			});
+		</script>
+	</head>
+
+	<body>
+
+		<div data-am-sticky class="top">
+			<div class="top-inner">
+				<!-- LOGO -->
+				<a href="#" class="top-icon">
+					<img src="img/logo.png" width="64px" height="30px" />
+				</a>
+				<!-- 导航按钮 -->
+				<ul class="nav">
+					<li>
+						<a href="#" class="is-active">首页</a>
+					</li>
+					<li>
+						<a href="#" class="isnot-active">发现</a>
+					</li>
+					<li>
+						<a href="#" class="isnot-active">话题</a>
+					</li>
+				</ul>
+				<!-- 搜索框 -->
+				<div class="searchBar">
+					<input type="text" name="searchContent" placeholder="搜索你感兴趣的内容..." />
+					<button type="submit">
+						<i class="fa-search"></i>						
+					</button>
+				</div>
+				<!-- 提问按钮 -->
+				<button class="questBtn">提问</button>
+				<!-- 登录用户 -->
+				<div class="existUser">
+					<span class="userNmae">TestName</span>
+					<button class="userIcon">
+						<img src="img/a.jpeg" width="30px" height="30px" />
+					</button>
+					<div class="btnContent">
+						<div class="content-arrow-bg"></div>
+						<div class="content-inner">
+							<a href="#">
+								<i class="fa fa-user"></i> 我的主页
+							</a>
+							<a href="#">
+								<i class="fa fa-cog"></i> 设置
+							</a>
+							<a href="#">
+								<i class="fa fa-power-off"></i> 退出
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 问题标题 -->
+			<div class="page-header card">
+
+			</div>
+		</div>
+
+		<!-- 问题及其内容 -->
+		<div class="question-header">
+			<div class="question-content">
+				<div class="question-main">
+					<h1 class="title">这里显示问题的标题？</h1>
+					<div class="detail">
+						这里显示问题的描述内容...<br /> 内容第一行
+						<br /> 内容第二行
+						<br /> 内容第三行
+					</div>
+				</div>
+				<!-- 关注数 和 浏览数 -->
+				<div class="side">
+					<div class="follow-status">
+						<div class="follower plain">
+							<div class="name">关注者</div>
+							<strong class="num">289</strong>
+						</div>
+						<div class="middle"></div>
+						<div class="skim plain">
+							<div class="name">被浏览</div>
+							<strong class="num">587,742</strong>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 操作 -->
+			<div class="question-actions">
+				<button class="attention-btn button button-blue">
+					关注问题
+				</button>
+				<button class="answer-btn button button-white">
+					<i class="fa fa-pencil"></i>
+					写回答
+				</button>
+			</div>
+		</div>
+
+		<!-- 回答主体 -->
+		<div class="main wrapper">
+			<!-- 回答 -->
+			<div class="answer-list card">
+				<!-- 回答的总数 -->
+				<h4 class="answer-num">10 个回答</h4>
+				<!-- 回答内容 -->
+				<div class="answers">
+					<div class="answer-item">
+						<!-- 用户信息 -->
+						<div class="author-info">
+							<!--头像-->
+							<img class="profile-photo" src="img/a.jpeg" />
+							<!--昵称与简介-->
+							<div class="info-content">
+								<strong class="author-name">
+									<a href="#">TestName</a>
+								</strong>
+								<p class="sentence">一句话介绍</p>
+							</div>
+						</div>
+						<!-- 回答的内容 -->
+						<!-- height 超过 500px 就折叠到 400px -->
+						<div class="content answer-fold">
+							<p>
+								显示回答的内容...<br /> 内容的第二行...
+								<br /> 内容的第三行...
+								<br /> 内容的第四行...
+								<br /> 内容的第五行...
+								<br /> 内容的第六行...
+								<br /> 内容的第七行...
+								<br /> 内容的第八行...
+								<br /> 内容的第九行...
+								<br /> 内容的第十行...
+								<br /> 内容的第十一行...
+								<br /> 内容的第十二行...
+								<br /> 内容的第十三行...
+								<br /> 内容的第十四行...
+								<br /> 内容的第十五行...
+								<br /> 内容的第十六行...
+								<br /> 内容的第十七行...
+								<br /> 内容的第十八行...
+								<br /> 内容的第十九行...
+								<br /> 内容的第二十行...
+								<br /> 内容的第二十一行...
+								<br /> 内容的第二十二行...
+								<br /> 内容的第二十三行...
+								<br /> 内容的第二十四行...
+								<br />
+							</p>
+						</div>
+						<button class="btn-unfold">
+							展开阅读全文
+							<i class="fa fa-chevron-down"></i>
+						</button>
+						<!-- 小小的操作 -->
+						<div class="actions">
+							<span>
+							<!-- 赞同 -->
+							<button class="btn vote-up">
+								<i class="fa fa-caret-up "></i>
+								<span>233</span>
+							</button>
+							<!-- 反对 -->
+							<button class="btn vote-down">
+								<i class="fa fa-caret-down"></i>
+							</button>
+							</span>
+							<!-- 评论 -->
+							<a href="#" class="comment">
+								<i class="fa fa-comment"></i>
+								<span>41 条评论</span>
+							</a>
+							<!-- 收藏 -->
+							<a href="#" class="collect collection-add">
+								<i class="fa fa-star-o"></i>
+								<span>添加收藏</span>
+							</a>
+							<a href="#" class="collect collection-del">
+								<i class="fa fa-star"></i>
+								<span>取消收藏</span>
+							</a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 相关问题 -->
+			<div class="sidebar">
+				<div class="theiaStickySidebar">
+
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

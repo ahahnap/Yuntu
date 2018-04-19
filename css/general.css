@@ -19,3 +19,32 @@
     border: 1px solid;
     border-radius: 3px;
 }
+
+.button-blue{
+    color: #fff;
+    background-color: #0084ff;
+    border-color: #0084ff;
+}
+
+.button-blue:hover{
+	border-color: #0077e6;
+    background-color: #0077e6;
+}
+
+.button-white{
+	color: #0084ff;
+    border-color: #0084ff;
+}
+
+.button-white:hover{
+    background-color: rgba(0,132,255,.06);
+}
+
+/*折叠*/
+.answer-fold{
+	height: 400px;
+	overflow: hidden;
+	
+	-webkit-mask-image: linear-gradient(#1a1a1a calc(100% - 8rem),
+	transparent calc(100% - 2.8rem));
+}
