@@ -21,11 +21,43 @@
 				/*判断是否折叠回答*/
 				var height;
 				$(".answer-item").each(function(){
-					height = $(this).find("content").height();
+					height = $(this).find($(".content")).height();
 					if (height > 500) {
-						alert(height);
+						$(this).find($(".content")).addClass("answer-fold");
+						$(this).find($(".btn-unfold")).css("display","block");
 					}
 				})
+				
+				/*写回答*/
+				$("#addAnswer").click(function(){
+					$(".answer-add").css("display","block");
+				});
+				
+				/*展开回答*/
+				$(".btn-unfold").click(function(){
+					$(this).parent().removeClass("answer-fold");
+					$(this).siblings(".btn-fold").css("display","block");
+					$(this).css("display","none");
+				});
+				
+				/*折叠回答*/
+				$(".btn-fold").click(function(){
+					$(this).parent().addClass("answer-fold");
+					$(this).siblings(".btn-unfold").css("display","block");
+					$(this).css("display","none");
+				});
+				
+				/*显示评论按钮*/
+				$(".my-comment").focus(function(){
+					$(this).next().css("display","inline-block");
+					$(this).next().toggleClass("am-animation-scale-up");
+				});
+				
+				/*消失评论按钮*/
+				$(".my-comment").blur(function(){
+					$(this).next().css("display","none");
+					$(this).next().toggleClass("am-animation-scale-up");
+				});
 			});
 		</script>
 	</head>
@@ -119,7 +151,7 @@
 				<button class="attention-btn button button-blue">
 					关注问题
 				</button>
-				<button class="answer-btn button button-white">
+				<button class="answer-btn button button-white" id="addAnswer">
 					<i class="fa fa-pencil"></i>
 					写回答
 				</button>
@@ -128,95 +160,257 @@
 
 		<!-- 回答主体 -->
 		<div class="main wrapper">
-			<!-- 回答 -->
-			<div class="answer-list card">
-				<!-- 回答的总数 -->
-				<h4 class="answer-num">10 个回答</h4>
-				<!-- 回答内容 -->
-				<div class="answers">
-					<div class="answer-item">
-						<!-- 用户信息 -->
-						<div class="author-info">
-							<!--头像-->
-							<img class="profile-photo" src="img/a.jpeg" />
-							<!--昵称与简介-->
-							<div class="info-content">
-								<strong class="author-name">
-									<a href="#">TestName</a>
-								</strong>
-								<p class="sentence">一句话介绍</p>
+			<div class="main-col">
+				<!-- 写回答的框 -->
+				<div class="answer-add card">
+					<!-- 用户信息 -->
+					<div class="author-info">
+						<!--头像-->
+						<img class="profile-photo" src="img/a.jpeg" />
+						<!--昵称与简介-->
+						<div class="info-content">
+							<strong class="author-name">
+								<a href="#">TestName</a>
+							</strong>
+							<p class="sentence">一句话介绍</p>
+						</div>
+					</div>
+					<!-- 文本编辑器 -->
+					<div style="text-align: center;">回答编辑器</div>
+					<!-- 提交 -->
+					<div class="footer">
+						<button class="button button-blue">提交回答</button>
+					</div>
+				</div>
+			
+				<!-- 回答 -->
+				<div class="answer-list card">
+					<!-- 回答的总数 -->
+					<h4 class="answer-num">10 个回答</h4>
+					<!-- 回答内容 -->
+					<div class="answers">
+						<div class="answer-item">
+							<!-- 用户信息 -->
+							<div class="author-info">
+								<!--头像-->
+								<img class="profile-photo" src="img/b.jpg" />
+								<!--昵称与简介-->
+								<div class="info-content">
+									<strong class="author-name">
+										<a href="#">TestName</a>
+									</strong>
+									<p class="sentence">一句话介绍</p>
+								</div>
 							</div>
-						</div>
-						<!-- 回答的内容 -->
-						<!-- height 超过 500px 就折叠到 400px -->
-						<div class="content answer-fold">
-							<p>
-								显示回答的内容...<br /> 内容的第二行...
-								<br /> 内容的第三行...
-								<br /> 内容的第四行...
-								<br /> 内容的第五行...
-								<br /> 内容的第六行...
-								<br /> 内容的第七行...
-								<br /> 内容的第八行...
-								<br /> 内容的第九行...
-								<br /> 内容的第十行...
-								<br /> 内容的第十一行...
-								<br /> 内容的第十二行...
-								<br /> 内容的第十三行...
-								<br /> 内容的第十四行...
-								<br /> 内容的第十五行...
-								<br /> 内容的第十六行...
-								<br /> 内容的第十七行...
-								<br /> 内容的第十八行...
-								<br /> 内容的第十九行...
-								<br /> 内容的第二十行...
-								<br /> 内容的第二十一行...
-								<br /> 内容的第二十二行...
-								<br /> 内容的第二十三行...
-								<br /> 内容的第二十四行...
-								<br />
-							</p>
-						</div>
-						<button class="btn-unfold">
-							展开阅读全文
-							<i class="fa fa-chevron-down"></i>
-						</button>
-						<!-- 小小的操作 -->
-						<div class="actions">
-							<span>
-							<!-- 赞同 -->
-							<button class="btn vote-up">
-								<i class="fa fa-caret-up "></i>
-								<span>233</span>
-							</button>
-							<!-- 反对 -->
-							<button class="btn vote-down">
-								<i class="fa fa-caret-down"></i>
-							</button>
-							</span>
-							<!-- 评论 -->
-							<a href="#" class="comment">
-								<i class="fa fa-comment"></i>
-								<span>41 条评论</span>
-							</a>
-							<!-- 收藏 -->
-							<a href="#" class="collect collection-add">
-								<i class="fa fa-star-o"></i>
-								<span>添加收藏</span>
-							</a>
-							<a href="#" class="collect collection-del">
-								<i class="fa fa-star"></i>
-								<span>取消收藏</span>
-							</a>
-
+							<!-- 回答的内容 -->
+							<!-- height 超过 500px 就折叠到 400px -->
+							<div class="content">
+								<p>
+									显示回答的内容...<br /> 内容的第二行...
+									<br /> 内容的第三行...
+									<br /> 内容的第四行...
+									<br /> 内容的第五行...
+									<br /> 内容的第六行...
+									<br /> 内容的第七行...
+									<br /> 内容的第八行...
+									<br /> 内容的第九行...
+									<br /> 内容的第十行...
+									<br /> 内容的第十一行...
+									<br /> 内容的第十二行...
+									<br /> 内容的第十三行...
+									<br /> 内容的第十四行...
+									<br /> 内容的第十五行...
+									<br /> 内容的第十六行...
+									<br /> 内容的第十七行...
+									<br /> 内容的第十八行...
+									<br /> 内容的第十九行...
+									<br /> 内容的第二十行...
+									<br /> 内容的第二十一行...
+									<br /> 内容的第二十二行...
+									<br /> 内容的第二十三行...
+									<br /> 内容的第二十四行...
+								</p>
+								<div class="edit-time">编辑于 2018-01-01</div>
+								<button class="btn-unfold">
+									展开阅读全文
+									<i class="fa fa-chevron-down"></i>
+								</button>
+								<button class="btn-fold">
+									收起
+									<i class="fa fa-angle-up"></i>
+								</button>
+							</div>
+							
+							<!-- 小小的操作 -->
+							<div class="actions">
+								<span>
+								<!-- 赞同 -->
+								<button class="btn vote-up">
+									<i class="fa fa-caret-up "></i>
+									<span>233</span>
+								</button>
+								<!-- 反对 -->
+								<button class="btn vote-down">
+									<i class="fa fa-caret-down"></i>
+								</button>
+								</span>
+								<!-- 查看评论 -->
+								<!--<a href="#" class="comment">
+									<i class="fa fa-comment"></i>
+									<span>41 条评论</span>
+								</a>-->
+								<!-- 收起评论 -->
+								<a href="#" class="comment">
+									<i class="fa fa-comment"></i>
+									<span>收起评论</span>
+								</a>
+								<!-- 收藏 -->
+								<a href="#" class="collect collection-add">
+									<i class="fa fa-star-o"></i>
+									<span>添加收藏</span>
+								</a>
+								<a href="#" class="collect collection-del">
+									<i class="fa fa-star"></i>
+									<span>取消收藏</span>
+								</a>
+	
+							</div>
+							
+							<!-- 对于该回答的评论 -->
+							<div class="comments-container">
+								<!-- 评论的总数 -->
+								<h4 class="comments-num">41 条评论</h4>
+								<div class="comments-list">
+									<div class="comment-item">
+										<div class="author-info">
+											<img src="img/c.jpg" style="width: 24px;"/>
+											<a href="#" style="margin-left:10px;color: #1a1a1a;">
+												Name1
+											</a>
+											<span class="comment-time">多久前</span>
+										</div>
+										<div class="comment-content">
+											<span>
+												第一条评论的内容...
+											</span>
+										</div>
+										<div class="footer">
+											<button class="btn-support">
+												<i class="fa fa-thumbs-up"></i>
+												<span>233</span>
+											</button>
+										</div>
+									</div>
+									<div class="comment-item">
+										<div class="author-info">
+											<img src="img/b.jpg" style="width: 24px;"/>
+											<a href="#" style="margin-left:10px;color: #1a1a1a;">
+												Name2
+											</a>
+											<span class="comment-time">多久前</span>
+										</div>
+										<div class="comment-content">
+											<span>
+												第二条评论的内容...
+											</span>
+										</div>
+										<div class="footer">
+											<button class="btn-support">
+												<i class="fa fa-thumbs-up"></i>
+												<span>57</span>
+											</button>
+										</div>
+									</div>
+									<div class="comment-item">
+										<div class="author-info">
+											<img src="img/a.jpeg" style="width: 24px;"/>
+											<a href="#" style="margin-left:10px;color: #1a1a1a;">
+												Name3
+											</a>
+											<span class="comment-time">多久前</span>
+										</div>
+										<div class="comment-content">
+											<span>
+												第三条评论的内容...
+											</span>
+										</div>
+										<div class="footer">
+											<button class="btn-support">
+												<i class="fa fa-thumbs-up"></i>
+												<span>23</span>
+											</button>
+										</div>
+									</div>
+									<div class="comment-item" style="text-align: center;">
+										假装这里还有12条评论
+									</div>
+									
+								</div>
+								<!-- 分页，15个评论一页 -->
+								<div class="comment-pagination">
+									<ul>
+										<!--<li>
+											<a href="#">上一页</a>
+										</li>-->
+										<li>
+											<a href="javascript:reutrn false;" class="is-active">1</a>
+										</li>
+										<li>
+											<a href="#">2</a>
+										</li>
+										<li>
+											<a href="#">3</a>
+										</li>
+										<li>
+											<a href="javascript:reutrn false;" class="omit">...</a>
+										</li>
+										<li>
+											<a href="#">7</a>
+										</li>
+										<li>
+											<a href="#">下一页</a>
+										</li>
+									</ul>
+								</div>
+								<!-- 添加评论 -->
+								<div class="comment-editor">
+									<input type="text" name="myComment" class="my-comment" placeholder="写下你的评论..." />
+									<button class="btn-comment button button-blue">评论</button>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!-- 相关问题 -->
+			<!-- 侧栏 -->
 			<div class="sidebar">
 				<div class="theiaStickySidebar">
-
+					<!-- 相关问题 -->
+					<div class="issue-related card">
+						<h4 class="title">相关问题</h4>
+						<ul>
+							<li>
+								<a href="#">相关问题一</a>
+								<span>10 个回答</span>
+							</li>
+							<li>
+								<a href="#">相关问题二</a>
+								<span>12个回答</span>
+							</li>
+							<li>
+								<a href="#">相关问题三</a>
+								<span>11 个回答</span>
+							</li>
+							<li>
+								<a href="#">相关问题四</a>
+								<span>13 个回答</span>
+							</li>
+							<li>
+								<a href="#">相关问题五</a>
+								<span>4 个回答</span>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>

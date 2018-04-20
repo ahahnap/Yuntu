@@ -95,10 +95,50 @@
 	margin: 0 8px;
 }
 
+/*写回答*/
+.main .answer-add{
+	display: none;
+}
+
+.main .answer-add .author-info{
+    padding: 16px 20px;
+    font-size: 15px;
+    color: #646464;
+    display: flex;
+    align-items: center;
+}
+
+.main .answer-add .author-info .profile-photo{
+	width: 38px;
+	height: 38px;
+}
+
+.main .answer-add .author-info .info-content{
+	margin-left: 14px;
+}
+
+.main .answer-add .author-info .info-content .author-name a{
+    color: #646464;
+}
+
+.main .answer-add .author-info .info-content .sentence{
+	margin: 0;
+	font-size: 14px;
+}
+
+
+
+.main .answer-add .footer{
+	padding: 12px 24px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+
 /*回答主体*/
 .main .answer-list{
-	width: 684px;
-	margin-right: 10px;
+	/*width: 684px;
+	margin-right: 10px;*/
 }
 
 .main .answer-list .answer-num{
@@ -141,15 +181,24 @@
 	font-size: 14px;
 }
 
-/*回答详细内容*/
+/*回答的详细内容*/
+.main .answer-list .answer-item .content{
+	position: relative;
+}
 
-.main .answer-list .answer-item .btn-unfold{
+.main .answer-list .answer-item .content .edit-time{
+	color: #8590a6;
+}
+
+/*展开按钮*/
+.main .answer-list .answer-item .content .btn-unfold{
     position: absolute;
     z-index: 10;
-    bottom: 75px;
+    bottom: 0;
     left: 0;
     width: 100%;
-    background-color: transparent;
+    height: 50px;
+    background: linear-gradient(transparent, #fff, #fff);
     border: none;
     outline: none;
     color: #175199;
@@ -158,8 +207,24 @@
     display: none;
 }
 
-.main .answer-list .answer-item .btn-unfold:hover{
+.main .answer-list .answer-item .content .btn-unfold:hover{
     color: #1f7acf;
+}
+
+/*折叠按钮*/
+.main .answer-list .answer-item .content .btn-fold{
+	position: absolute;
+	bottom: -45px;
+	right: 30px;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+	color: #8590a6;
+	display: none;
+}
+
+.main .answer-list .answer-item .content .btn-fold:hover{
+	color: #47494b;
 }
 
 /*对该回答的操作*/
@@ -217,4 +282,156 @@
 
 .main .answer-list .answer-item .actions .collection-del{
 	display: none;
+}
+
+/*对于回答的评论列表*/
+.main .answer-list .answer-item .comments-container{
+    margin-top: 12px;
+    background: #fff;
+	border: 1px solid #ebebeb;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    border-radius: 4px;
+}
+
+.main .answer-list .answer-item .comments-container .comments-num{
+    height: 50px;
+    margin: 0 20px;
+    border-bottom: 1px solid #f6f6f6;
+    line-height: 50px;
+}
+
+.main .answer-list .answer-item .comments-container .comments-list .comment-item{
+	position: relative;
+	padding: 12px 20px 10px;
+}
+
+.main .answer-list .answer-item .comments-container .comments-list .comment-item::after{
+	content: "";
+	border-bottom: 1px solid #f6f6f6;
+	display: block;
+	position: relative;
+	bottom: -20px;
+}
+
+.main .answer-list .answer-item .comments-container .comments-list .comment-item:last-child::after{
+	display: none;
+}
+
+.main .answer-list .answer-item .comments-container .comments-list .comment-item .comment-time{
+	position: absolute;
+	right: 20px;
+	top: 22px;
+    font-size: 14px;
+    color: #8590a6;
+}
+
+.main .answer-list .answer-item .comments-container .comment-item .btn-support{
+	color: #8590a6;
+	background: none;
+	border: none;
+	outline: none;
+}
+
+.main .answer-list .answer-item .comments-container .comment-item .btn-support:hover{
+	color: #77839c;
+}
+
+/*评论分页*/
+.main .answer-list .answer-item .comments-container .comment-pagination{
+	border-top: 1px solid #ebebeb;
+	padding: 16px 20px;
+}
+
+.main .answer-list .answer-item .comments-container .comment-pagination ul{
+	height: 24px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.main .answer-list .answer-item .comments-container .comment-pagination ul li{
+	display: inline;
+}
+
+.main .answer-list .answer-item .comments-container .comment-pagination ul li a{
+    padding: 0 15px;
+	color: #1a1a1a;
+    transition: color .2s;
+    font-size: 14px;
+}
+
+.main .answer-list .answer-item .comments-container .comment-pagination ul li .is-active,.omit{
+	color: #8590a6;
+	cursor: text;
+}
+
+.main .answer-list .answer-item .comments-container .comment-pagination ul li a:hover{
+	color: #175199;
+}
+
+/*添加评论*/
+.main .answer-list .answer-item .comments-container .comment-editor{
+	padding: 12px 20px;
+    background: #fff;
+    border-top: 1px solid #ebebeb;
+    position: relative;
+}
+
+.main .answer-list .answer-item .comments-container .comment-editor .my-comment{
+	width: 100%;
+	padding: 5px 12px;
+    background: #f6f6f6;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    line-height: 24px;
+    transition:width .3s, background .2s,border .2s;
+    outline: none;
+}
+
+.main .answer-list .answer-item .comments-container .comment-editor .my-comment:focus{
+	width: 530px;
+	border-color: #8590a6;
+	background: #ffffff;
+}
+
+.main .answer-list .answer-item .comments-container .comment-editor .btn-comment{
+	display: none;
+	position: absolute;
+	right: 20px;
+	top: 12px;
+	height: 36px;
+}
+
+/*sideba 相关问题r*/
+.main .sidebar .issue-related .title{
+	height: 50px;
+	margin: 0;
+    padding: 0 20px;
+    border-bottom: 1px solid #f6f6f6;
+    line-height: 50px;
+}
+
+.main .sidebar .issue-related ul{
+	margin: 0;
+	padding: 16px 20px;
+}
+
+.main .sidebar .issue-related ul li{
+	margin-bottom: 10px;
+}
+
+.main .sidebar .issue-related ul li:last-child{
+	margin-bottom: 0;
+}
+
+.main .sidebar .issue-related ul li a{
+	color: #175199;
+}
+
+.main .sidebar .issue-related ul li a:hover{
+	border-bottom: 1px solid #175199;
+}
+
+.main .sidebar .issue-related ul li span{
+	margin-left: 5px;
 }
