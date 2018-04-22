@@ -1,9 +1,300 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>这里显示文章的标题 - 云途</title>
+		<link rel="stylesheet" href="css/amazeui.css" />
+		<link href="css/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/general.css" />
+		<link rel="stylesheet" href="css/article.css" />
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/amazeui.js"></script>
+		<script>
+			$(function(){
+				/*显示评论按钮*/
+				$(".my-comment").focus(function(){
+					$(this).next().css("display","inline-block");
+					$(this).next().toggleClass("am-animation-scale-up");
+				});
+				
+				/*消失评论按钮*/
+				$(".my-comment").blur(function(){
+					$(this).next().css("display","none");
+					$(this).next().toggleClass("am-animation-scale-up");
+				});
+				
+				/*赞赏按钮*/
+				$("#likeBtn").click(function(){
+					if($(this).hasClass("btn-like")){
+						$(this).removeClass("btn-like");
+						$(this).addClass("btn-like-active");
+						var num = $("#likeNum").text();
+						num++;
+						$("#likeNum").text(num);
+						$(".admire-num .num").text(num);
+					}else{
+						if($(this).hasClass("btn-like-active")){
+							$(this).removeClass("btn-like-active");
+							$(this).addClass("btn-like");
+							var num = $("#likeNum").text();
+							num--;
+							$("#likeNum").text(num);
+							$(".admire-num .num").text(num);
+						}
+					}
+				});
+				
+				/*收藏按钮*/
+				$("#collectBtn").click(function(){
+					if($(this).hasClass("btn-collect")){
+						$(this).removeClass("btn-collect");
+						$(this).addClass("btn-collect-active");
+						$("#collectValue").text("取消");
+					}else{
+						if($(this).hasClass("btn-collect-active")){
+							$(this).removeClass("btn-collect-active");
+							$(this).addClass("btn-collect");
+							$("#collectValue").text("收藏");
+						}
+					}
+				});
+				
+				/*关注按钮*/
+				
+				
+			});
+			
+		</script>
 	</head>
+
 	<body>
+		<div data-am-sticky class="top">
+			<div class="top-inner">
+				<!-- LOGO -->
+				<a href="#" class="top-icon">
+					<img src="img/logo.png" width="64px" height="30px" />
+				</a>
+				<!-- 写文章按钮 -->
+				<div class="divbtn">
+					<button class="btn-write button button-white">
+						<i class="fa fa-edit"></i>
+						写文章
+					</button>
+				</div>
+				
+				<!-- 浮动的两个按钮 -->
+				<div class="float-btn" id="floatBtn">
+					<!-- 赞赏按钮 -->
+					<button class="btn-like btn" id="likeBtn">
+						<i class="fa fa-thumbs-up"></i>
+					</button>
+					<span class="like-num" id="likeNum">233</span>
+					<!-- 收藏按钮 -->
+					<button class="btn-collect btn" id="collectBtn">
+						<i class="fa fa-star"></i>
+					</button>
+					<span class="collect" id="collectValue">收藏</span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="main">
+			<!-- 文章题图 -->
+			<img class="title-image" src="img/changlong.jpg" />
+			<div class="header">
+				<!-- 文章题目 -->
+				<h1 class="title">这里显示文章的题目</h1>
+				<!-- 作者信息 -->
+				<div class="author">
+					<!-- 用户信息 -->
+					<div class="author-info">
+						<!--头像-->
+						<img class="profile-photo" src="img/a.jpeg" />
+						<!--昵称与简介-->
+						<div class="info-content">
+							<strong class="author-name">
+								<a href="#">TestName</a>
+							</strong>
+							<p class="sentence">一句话介绍</p>
+						</div>
+					</div>
+					<button class="btn-follow button button-blue">
+						<i class="fa fa-plus" style="margin-right: 5px;"></i>
+						关注他
+					</button>
+				</div>
+				<!-- 文章赞赏人数 -->
+				<span class="admire-num"><span class="num">233</span> 人赞赏了该文章</span>
+			</div>
+			<!-- 文章主体 -->
+			<div class="rich-text">
+				这里显示文章内容<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				.<br />
+				假装有这么多内容
+				<div class="edit-time">编辑于 2018-01-01</div>
+			</div>
+			<!-- 对于文章的评论 -->
+			<div class="comments-container">
+				<!-- 评论的总数 -->
+				<h4 class="comments-num">41 条评论</h4>
+				<!-- 添加评论 -->
+				<div class="comment-editor">
+					<input type="text" name="myComment" class="my-comment" placeholder="写下你的评论..." />
+					<button class="btn-comment button button-blue">评论</button>
+				</div>
+				<!-- 评论列表 -->
+				<div class="comments-list">
+					<div class="comment-item">
+						<div class="author-info">
+							<img src="img/c.jpg" style="width: 24px;"/>
+							<a href="#" style="margin-left:10px;color: #1a1a1a;">
+								Name1
+							</a>
+							<span class="comment-time">多久前</span>
+						</div>
+						<div class="comment-content">
+							<span>
+								第一条评论的内容...
+							</span>
+						</div>
+						<div class="footer">
+							<button class="btn-support">
+								<i class="fa fa-thumbs-up"></i>
+								<span>233</span>
+							</button>
+						</div>
+					</div>
+					<div class="comment-item">
+						<div class="author-info">
+							<img src="img/b.jpg" style="width: 24px;"/>
+							<a href="#" style="margin-left:10px;color: #1a1a1a;">
+								Name2
+							</a>
+							<span class="comment-time">多久前</span>
+						</div>
+						<div class="comment-content">
+							<span>
+								第二条评论的内容...
+							</span>
+						</div>
+						<div class="footer">
+							<button class="btn-support">
+								<i class="fa fa-thumbs-up"></i>
+								<span>57</span>
+							</button>
+						</div>
+					</div>
+					<div class="comment-item">
+						<div class="author-info">
+							<img src="img/a.jpeg" style="width: 24px;"/>
+							<a href="#" style="margin-left:10px;color: #1a1a1a;">
+								Name3
+							</a>
+							<span class="comment-time">多久前</span>
+						</div>
+						<div class="comment-content">
+							<span>
+								第三条评论的内容...
+							</span>
+						</div>
+						<div class="footer">
+							<button class="btn-support">
+								<i class="fa fa-thumbs-up"></i>
+								<span>23</span>
+							</button>
+						</div>
+					</div>
+					<div class="comment-item" style="text-align: center;">
+						假装这里还有12条评论
+					</div>
+					
+				</div>
+				<!-- 分页，15个评论一页 -->
+				<div class="comment-pagination">
+					<ul>
+						<!--<li>
+							<a href="#">上一页</a>
+						</li>-->
+						<li>
+							<a href="javascript:reutrn false;" class="is-active">1</a>
+						</li>
+						<li>
+							<a href="#">2</a>
+						</li>
+						<li>
+							<a href="#">3</a>
+						</li>
+						<li>
+							<a href="javascript:reutrn false;" class="omit">...</a>
+						</li>
+						<li>
+							<a href="#">7</a>
+						</li>
+						<li>
+							<a href="#">下一页</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+
 	</body>
+
 </html>

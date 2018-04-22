@@ -49,3 +49,31 @@
 	/*-webkit-mask-image: linear-gradient(#1a1a1a calc(100% - 8rem),
 	transparent calc(100% - 2.8rem));*/
 }
+
+/*顶部栏*/
+.top{
+	min-width: 1032px;
+	height: 52px;
+	width: 100%;
+	background: white;
+	box-shadow: 0 1px 3px rgba(26,26,26,.1);
+	position: relative;
+}
+
+.top .top-inner{
+	width:1000px;
+	height: 52px;
+	margin: 0 auto;
+	padding: 0 16px;
+	display: flex;
+	align-items: center;
+	
+	position: relative;
+}
+
+/*LOGO*/
+.top .top-inner .top-icon{
+	display: block;
+	width: 64px;
+	height: 30px;
+}

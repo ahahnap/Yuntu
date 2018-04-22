@@ -1,0 +1,142 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    height: 59px;
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .header-icon{
+	display: block;
+	width: 64px;
+	height: 30px;
+	margin-left: 10px;
+}
+
+.header .header-title{
+	display: block;
+	width: 690px;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+.header .btn-publish{
+	margin-right: 30px;
+}
+
+.main{
+	width: 690px;
+	margin: 85px auto 40px;
+}
+
+/*题图编辑*/
+.main .title-image-editor{
+	width: 100%;
+	min-height: 200px;
+	background: #f7f8f9;
+	position: relative;
+}
+
+.main .title-image-editor .back{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 35px;
+	color: rgba(0,0,0,.2);
+}
+
+.main .title-image-editor .remark-blur{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: rgba(0,0,0,.2);
+	transition: .2s;
+	opacity: 0;
+}
+
+.main .title-image-editor .remark-over{
+	position: absolute;
+	top: 65%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: rgba(0,0,0,.3);
+	transition: .2s;
+}
+
+.main .title-image-editor .upload-image{
+	/*opacity: 0;*/
+	position: absolute;
+}
+
+.main .title-image-editor .btn-upload{
+	width: 690px;
+	height: 200px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 50;
+	border: none;
+	background: transparent;
+	outline: none;
+	cursor: pointer;
+}
+
+.main .title-image-editor .title-image{
+	width: 690px;
+}
+
+.main .title-image-editor .edit-wrapper{
+	position: absolute;
+	right: 0;
+	bottom: 4px;
+	height: 42px;
+	background: rgba(0,0,0,.75);
+    border-radius: 4px 0 0 0;
+}
+
+.main .title-image-editor .edit-wrapper button{
+	width: 42px;
+	height: inherit;
+	border: none;
+	background: transparent;
+	color: #fff;
+	font-size: 15px;
+	cursor: pointer;
+	outline: none;
+}
+
+.inactive{
+	display: none;
+}
+
+/*标题编辑*/
+.main .title-editor{
+	display: block;
+	width: 100%;
+	height: 44px;
+	margin: 16px 0;
+	padding: 0;
+	border: 0;
+	font-size: 32px;
+	font-weight: 600;
+	outline: none;
+	
+}
+
+/*文本编辑器*/
+.main .rich-text-editor{
+	width: 100%;
+	min-height: 600px;
+}
