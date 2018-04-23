@@ -188,6 +188,15 @@
 
 .main .sidebar .classify form{
 	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.main .sidebar .classify select{
+	min-width: 160px;
+	padding: 5px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	outline: none;
 }
 
 .main .sidebar .classify .btn-search{
