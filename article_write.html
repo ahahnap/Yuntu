@@ -47,8 +47,6 @@
 			        return url ;
 				}
 				
-				var prevSrc;
-				
 				$("#uploadInput").on("change",function(){
 					var newsrc = getObjectURL(this.files[0]);
 					$("#titleImage").attr("src", newsrc);
@@ -60,7 +58,6 @@
 						$(".uploadBtn1").addClass("inactive");
 						$(".edit-wrapper").removeClass("inactive");
 					}
-					alert(0);
 				});
 				
 				/*删除题图*/

@@ -5,7 +5,7 @@
 
 body{
 	font-size: 15px;
-	background: #f6f6f6
+	background: #f6f6f6;
 }
 
 li{
@@ -260,8 +260,8 @@ a{
 	width: 654px;
 	margin-bottom: 14px;
 	display: flex;
-   justify-content: flex-start;
-   position: relative;
+    justify-content: flex-start;
+    position: relative;
 }
 
 .main .main-col .item .byLine .profile-photo{

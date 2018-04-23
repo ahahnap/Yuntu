@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>发现 - 云途</title>
+		<link rel="stylesheet" href="css/amazeui.css" />
+		<link href="css/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/questions_page.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" href="css/general.css" />
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/amazeui.js"></script>
+		<script src="js/theia-sticky-sidebar.js"></script>
+	</head>
+	<body style="background: #fff;">
+		<div data-am-sticky class="top">
+			<div class="top-inner">
+				<!-- LOGO -->
+				<a href="#" class="top-icon">
+					<img src="img/logo.png" width="64px" height="30px" />
+				</a>
+				<!-- 导航按钮 -->
+				<ul class="nav">
+					<li>
+						<a href="#" class="isnot-active">首页</a>
+					</li>
+					<li>
+						<a href="#" class="is-active">发现</a>
+					</li>
+					<li>
+						<a href="#" class="isnot-active">分享</a>
+					</li>
+				</ul>
+				<!-- 搜索框 -->
+				<div class="searchBar">
+					<input type="text" name="searchContent" placeholder="搜索你感兴趣的内容..." />
+					<button type="submit">
+						<i class="fa-search"></i>						
+					</button>
+				</div>
+				<!-- 提问按钮 -->
+				<button class="questBtn">提问</button>
+				<!-- 登录用户 -->
+				<div class="existUser">
+					<span class="userNmae">TestName</span>
+					<button class="userIcon">
+						<img src="img/a.jpeg" width="30px" height="30px" />
+					</button>
+					<div class="btnContent">
+						<div class="content-arrow-bg"></div>
+						<div class="content-inner">
+							<a href="#">
+								<i class="fa fa-user"></i> 我的主页
+							</a>
+							<a href="#">
+								<i class="fa fa-cog"></i> 设置
+							</a>
+							<a href="#">
+								<i class="fa fa-power-off"></i> 退出
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--  -->
+		<div class="main">
+			<!-- 问题列表 -->
+			<div class="main-col">
+				<div class="explore-tab">
+					<ul class="tab-navs">
+						<li>
+							<a href="#" class="active">最新</a>
+						</li>
+						<li>
+							<a href="#" class="inactive">最热</a>
+						</li>
+					</ul>
+					<div class="tab-panel">
+						<!-- 有图片的回答 -->
+						<div class="tab-item">
+							<a href="#" class="question-link">显示问题标题？</a>
+							<div class="item-answer">
+								<!-- 点赞数 -->
+								<div class="item-vote">
+									10K
+								</div>
+								<div class="answer-head">
+									<!--用户名-->
+									<a href="#" class="author-name">用户名</a>
+									<!--用户简介-->
+									<span class="author-badge">一句话介绍</span>
+								</div>
+								<!-- 回答内容 -->
+								<div class="answer-content">
+									<div class="content-img">
+										<img src="img/pic1.png" class="pimg" />
+									</div>
+									<div class="content-inner">
+										<span>皇帝岛在普吉岛的南面，相距12公里，快艇需要30-40分钟左右。与普吉岛其他热门或不那么热门的景点相比，皇帝岛算是一个非常新的面孔。岛上不仅有优美完整的天然热带岛屿风光，珊瑚礁的海岸景色同样让人难忘。由于开发较晚，到此的游客数量比较少...</span>
+									</div>
+								</div>
+								<!-- 小操作 -->
+								<div class="answer-actions">
+									<a href="#">
+										<i class="fa fa-thumbs-up"></i>
+										点赞
+									</a>
+									<a href="#">
+										<i class="fa fa-plus"></i>
+										关注问题
+									</a>
+								</div>
+							</div>
+						</div>
+						<!-- 没有图片的回答 -->
+						<div class="tab-item">
+							<a href="#" class="question-link">显示问题标题？</a>
+							<div class="item-answer">
+								<!-- 点赞数 -->
+								<div class="item-vote">
+									10K
+								</div>
+								<div class="answer-head">
+									<!--用户名-->
+									<a href="#" class="author-name">用户名</a>
+									<!--用户简介-->
+									<span class="author-badge">一句话介绍</span>
+								</div>
+								<!-- 回答内容 -->
+								<div class="answer-content">
+									<div class="content-article">
+										<span>
+											早做好决定的周末夏威夷之行，就在起飞🛫️降落🛬️，下雨🌧️晴朗☀️的过程，享受每一秒的新鲜空气与快乐时光。
+											夏威夷的美味佳肴还有满满香甜的水果，以及永远都在胃里占一席之地的冰沙。
+											第一次开一辆连驾驶座都上不去的吉普车 :-) 第一次的黄鳍金枪鱼，缓缓味蕾的消化。
+											第一次愿意为了行程而不计一切阻碍。...
+										</span>
+									</div>
+								</div>
+								<!-- 小操作 -->
+								<div class="answer-actions">
+									<a href="#">
+										<i class="fa fa-thumbs-up"></i>
+										点赞
+									</a>
+									<a href="#">
+										<i class="fa fa-plus"></i>
+										关注问题
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 侧栏 -->
+			<div class="sidebar">
+				<div class="theiaStickySidebar">
+					<div class="classify">
+						<h4 class="title">选择分类</h4>
+						<form action="">
+							<input type="submit" value="查找" class="btn-search button button-blue"/>
+						</form>
+					</div>
+					<div class="hot-class">
+						<h4 class="title">热门分类</h4>
+						<ul>
+							<li>
+								<a href="#">北京</a>
+							</li>
+							<li>
+								<a href="#">广州</a>
+							</li>
+							<li>
+								<a href="#">上海</a>
+							</li>
+							<li>
+								<a href="#">四平</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+	</body>
+</html>
