@@ -1,0 +1,59 @@
+/*这里都是写问题框框的样式*/
+.quiz .am-modal-hd{
+	padding-bottom: 15px;
+	font-size: 24px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.quiz .am-modal-bd{
+	text-align: left;
+}
+
+.quiz label{
+	padding-left: 10px;
+}
+
+.quiz input{
+	width: 500px;
+	margin-bottom: 10px;
+	padding: 10px 10px;
+	border: 1px solid #ebebeb;
+	border-radius: 4px;
+	outline: none;
+}
+
+.quiz input::-webkit-input-placeholder{
+	font-size: 14px;
+	color: #8590a6;
+}
+
+.quiz fieldset{
+	margin: 0;
+}
+
+.quiz .btn-address{
+	display: block;
+	margin: 0 auto;
+}
+
+.quiz textarea{
+	width: 500px;
+	height: 100px;	
+	margin-bottom: 10px;
+	padding: 10px 10px;
+	border: 1px solid #ebebeb;
+	border-radius: 4px;
+	outline: none;
+	resize: none;
+}
+
+.quiz textarea::-webkit-input-placeholder{
+	font-size: 14px;
+	color: #8590a6;
+}
+
+.quiz .btn-submit{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用模态窗口提问</title>
+		<link rel="stylesheet" href="css/amazeui.css" />
+		<link href="css/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/amazeui.address.css" />
+		<link rel="stylesheet" href="css/question_write.css" />
+		<link rel="stylesheet" href="css/general.css" />
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/amazeui.js"></script>
+		<script src="js/iscroll.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/address.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function() {
+				/*弹出模态窗口*/
+				$('#doc-prompt-toggle').on('click', function() {
+					$('#my-prompt').modal({
+
+					});
+				});
+
+				/*弹出地址选择窗口*/
+				$("#address1").address({
+					customOutput: true,
+					selectEnd: function(json, address) {
+						for(var key in json) {
+							$("#address1-form").find("input[name='" + key + "']").val(json[key]);
+						}
+					}
+				}).on("provTap", function(event, activeli) {
+					console.log(activeli.text());
+				}).on("cityTap", function(event, activeli) {
+					console.log(activeli.text());
+				})
+			});
+		</script>
+	</head>
+
+	<body>
+		<div data-am-sticky class="top">
+			<div class="top-inner">
+				<!-- LOGO -->
+				<a href="#" class="top-icon">
+					<img src="img/logo.png" width="64px" height="30px" />
+				</a>
+				<!-- 导航按钮 -->
+				<ul class="nav">
+					<li>
+						<a href="#" class="is-active">首页</a>
+					</li>
+					<li>
+						<a href="#" class="isnot-active">发现</a>
+					</li>
+					<li>
+						<a href="#" class="isnot-active">话题</a>
+					</li>
+				</ul>
+				<!-- 搜索框 -->
+				<div class="searchBar">
+					<input type="text" name="searchContent" placeholder="搜索你感兴趣的内容..." />
+					<button type="submit">
+						<i class="fa-search"></i>						
+					</button>
+				</div>
+				
+				
+				
+				<!-- 提问按钮 -->
+				<button class="questBtn" id="doc-prompt-toggle">提问</button>
+				<!-- 写问题 -->
+				<div class="am-modal am-modal-prompt quiz" tabindex="-1" id="my-prompt">
+					<div class="am-modal-dialog">
+						<div class="am-modal-hd">写下你的问题</div>
+						<div class="am-modal-bd">
+							<form action="" id="address1-form">
+								<!-- 问题标题 -->
+								<label>问题标题：</label><br />
+								<input type="text" placeholder="写下问题的标题" /><br />
+								<!-- 问题区域 -->
+								<label>区域选择：</label><br />
+								<fieldset class="am-form-set">
+									<input type="text" name="prov" readonly><br />
+									<input type="text" name="city" readonly><br />
+									<input type="text" name="district" readonly><br />
+								</fieldset>
+								<button type="button" id="address1" class="btn-address button button-white">
+									<i class="am-icon am-icon-home"></i> 选择地址
+								</button>
+								<!-- 问题描述 -->
+								<label>问题描述：</label><br />
+								<textarea placeholder="写下问题的详细信息"></textarea><br />
+								<input type="submit" value="提交问题" class="btn-submit button button-blue" />
+							</form>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<!-- 登录用户 -->
+				<div class="existUser">
+					<span class="userNmae">TestName</span>
+					<button class="userIcon">
+						<img src="img/a.jpeg" width="30px" height="30px" />
+					</button>
+					<div class="btnContent">
+						<div class="content-arrow-bg"></div>
+						<div class="content-inner">
+							<a href="#">
+								<i class="fa fa-user"></i> 我的主页
+							</a>
+							<a href="#">
+								<i class="fa fa-cog"></i> 设置
+							</a>
+							<a href="#">
+								<i class="fa fa-power-off"></i> 退出
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>
