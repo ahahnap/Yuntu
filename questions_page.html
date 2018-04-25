@@ -11,6 +11,32 @@
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/amazeui.js"></script>
 		<script src="js/theia-sticky-sidebar.js"></script>
+		<script>
+			$(function(){
+				
+				/*点赞关注打开关闭两种动作*/
+				$(".good").click(function(){
+					if($(this).hasClass("good-ed")){
+						$(this).removeClass("good-ed");
+						$(this).children("span").text("点赞");
+					}else{
+						$(this).addClass("good-ed");
+						$(this).children("span").text("不赞");
+					}
+				});
+				
+				$(".attention").click(function(){
+					if($(this).hasClass("attention-ed")){
+						$(this).removeClass("attention-ed");
+						$(this).children("span").text("关注问题");
+					}else{
+						$(this).addClass("attention-ed");
+						$(this).children("span").text("取消关注");
+					}
+				});
+				
+			});
+		</script>
 	</head>
 	<body style="background: #fff;">
 		<div data-am-sticky class="top">
@@ -103,13 +129,13 @@
 								</div>
 								<!-- 小操作 -->
 								<div class="answer-actions">
-									<a href="#">
+									<a class="good" href="#">
 										<i class="fa fa-thumbs-up"></i>
-										点赞
+										<span>点赞</span>
 									</a>
-									<a href="#">
+									<a class="attention" href="#">
 										<i class="fa fa-plus"></i>
-										关注问题
+										<span>关注问题</span>
 									</a>
 								</div>
 							</div>
@@ -141,13 +167,13 @@
 								</div>
 								<!-- 小操作 -->
 								<div class="answer-actions">
-									<a href="#">
+									<a class="good" href="#">
 										<i class="fa fa-thumbs-up"></i>
-										点赞
+										<span>点赞</span>
 									</a>
-									<a href="#">
+									<a class="attention" href="#">
 										<i class="fa fa-plus"></i>
-										关注问题
+										<span>关注问题</span>
 									</a>
 								</div>
 							</div>

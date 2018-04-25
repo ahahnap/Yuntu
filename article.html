@@ -60,8 +60,13 @@
 					}
 				});
 				
-				/*关注按钮*/
-				
+				/*取关按钮*/
+				$(".btn-unfollow").mouseover(function(){
+					$(this).text("取消关注");
+				});
+				$(".btn-unfollow").mouseleave(function(){
+					$(this).text("已关注");
+				});
 				
 			});
 			
@@ -119,9 +124,14 @@
 							<p class="sentence">一句话介绍</p>
 						</div>
 					</div>
+					<!-- 关注按钮 -->
 					<button class="btn-follow button button-blue">
 						<i class="fa fa-plus" style="margin-right: 5px;"></i>
 						关注他
+					</button>
+					<!-- 取关按钮 -->
+					<button class="btn-unfollow button">
+						已关注
 					</button>
 				</div>
 				<!-- 文章赞赏人数 -->

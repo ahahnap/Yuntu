@@ -77,3 +77,22 @@
 	width: 64px;
 	height: 30px;
 }
+
+/*点击加载更多div*/
+.add-more{
+	height: 50px;
+	color: #aaa;
+}
+
+.add-more .btn-addmore{
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	background: transparent;
+	outline: none;
+}
+
+.add-more .btn-addmore:hover{
+	color: #666;
+}

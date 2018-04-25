@@ -371,10 +371,8 @@ a{
     padding: 0 14px;
     font-size: 14px;
     line-height: 32px;
-    color: #0084ff;
     text-align: center;
     cursor: pointer;
-    background: rgba(0,132,255,.1);
     border: none;
     border-radius: 3px;
     outline: none;
@@ -384,7 +382,19 @@ a{
 	font-size: 18px;
 }
 
-.main .main-col .item .actions .btn:hover{
+/*已投*/
+.main .main-col .item .actions .voted{
+	background: #0084ff;
+	color: #fff;
+}
+
+/*未投*/
+.main .main-col .item .actions .no-vote{
+    background: rgba(0,132,255,.1);
+    color: #0084ff;
+}
+
+.main .main-col .item .actions .no-vote:hover{
 	background-color: rgba(0,132,255,.15);
 }
 

@@ -169,7 +169,22 @@
 
 .main .explore-tab .tab-item .item-answer .answer-actions a:hover{
     color: #259;
-    text-decoration: underline;
+    /*text-decoration: underline;*/
+}
+
+.main .explore-tab .tab-item .item-answer .answer-actions .good-ed{
+	color: #0084ff;
+}
+.main .explore-tab .tab-item .item-answer .answer-actions .good-ed:hover{
+	color: #0084ff;
+	text-decoration: underline;
+}
+.main .explore-tab .tab-item .item-answer .answer-actions .attention-ed{
+	color: #0084ff;
+}
+.main .explore-tab .tab-item .item-answer .answer-actions .attention-ed:hover{
+	color: #0084ff;
+	text-decoration: underline;
 }
 
 /*侧栏*/

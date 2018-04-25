@@ -138,6 +138,18 @@
 	font-size: 14px;
 }
 
+/*关注 取关按钮*/
+.main .header .author .btn-follow{
+	width: 96px;
+}
+
+.main .header .author .btn-unfollow{
+	width: 96px;
+	height: 36px;
+	background: #8590a6;
+	color: #fff;
+}
+
 /*文章赞赏人数*/
 .main .header .admire-num{
     display: block;

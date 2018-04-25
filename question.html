@@ -28,6 +28,29 @@
 					}
 				})
 				
+				/*关注取关按钮*/
+				$("#attentionBtn").click(function(){
+					if($(this).hasClass("attention-cancel")){
+						$(this).removeClass("attention-cancel");
+						$(this).text("关注问题");
+					}else{
+						$(this).addClass("attention-cancel");
+						$(this).text("已关注");
+					}
+					
+				})
+				
+				$("#attentionBtn").mouseover(function(){
+					if($(this).hasClass("attention-cancel")){
+						$(this).text("取消关注");
+					}
+				})
+				$("#attentionBtn").mouseleave(function(){
+					if($(this).hasClass("attention-cancel")){
+						$(this).text("已关注");
+					}
+				})
+				
 				/*写回答*/
 				$("#addAnswer").click(function(){
 					$(".answer-add").css("display","block");
@@ -58,6 +81,20 @@
 					$(this).next().css("display","none");
 					$(this).next().toggleClass("am-animation-scale-up");
 				});
+				
+				/*评论点赞*/
+				$(".btn-support").click(function(){
+					if($(this).hasClass("no")){
+						$(this).removeClass("no");
+						$(this).addClass("yes");
+					}else{
+						if($(this).hasClass("yes")){
+							$(this).removeClass("yes");
+							$(this).addClass("no");
+						}
+					}
+				});
+				
 			});
 		</script>
 	</head>
@@ -148,7 +185,7 @@
 			</div>
 			<!-- 操作 -->
 			<div class="question-actions">
-				<button class="attention-btn button button-blue">
+				<button class="attention-btn button button-blue" id="attentionBtn">
 					关注问题
 				</button>
 				<button class="answer-btn button button-white" id="addAnswer">
@@ -298,9 +335,9 @@
 											</span>
 										</div>
 										<div class="footer">
-											<button class="btn-support">
+											<button class="btn-support no">
 												<i class="fa fa-thumbs-up"></i>
-												<span>233</span>
+												<span id="supportNum">233</span>
 											</button>
 										</div>
 									</div>
@@ -318,7 +355,7 @@
 											</span>
 										</div>
 										<div class="footer">
-											<button class="btn-support">
+											<button class="btn-support no">
 												<i class="fa fa-thumbs-up"></i>
 												<span>57</span>
 											</button>
@@ -338,7 +375,7 @@
 											</span>
 										</div>
 										<div class="footer">
-											<button class="btn-support">
+											<button class="btn-support yes">
 												<i class="fa fa-thumbs-up"></i>
 												<span>23</span>
 											</button>

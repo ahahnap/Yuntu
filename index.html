@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="css/amazeui.css" />
 		<link href="css/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" href="css/general.css" />
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/amazeui.js"></script>
 		<script src="js/theia-sticky-sidebar.js"></script>
@@ -114,12 +115,14 @@
 					<div class="actions">
 						<span>
 							<!-- 赞同 -->
-							<button class="btn vote-up" onclick="voteup()">
+							<!-- 已投票voted -->
+							<!-- 未投票no-vote -->
+							<button class="btn voted vote-up" onclick="voteup()">
 								<i class="fa fa-caret-up "></i>
 								<span>233</span>
 							</button>
 							<!-- 反对 -->
-							<button class="btn vote-down" onclick="votedown()">
+							<button class="btn no-vote vote-down" onclick="votedown()">
 								<i class="fa fa-caret-down"></i>
 							</button>
 						</span>
@@ -173,12 +176,12 @@
 					<div class="actions">
 						<span>
 							<!-- 赞同 -->
-							<button class="btn vote-up" onclick="voteup()">
+							<button class="btn no-vote vote-up" onclick="voteup()">
 								<i class="fa fa-caret-up "></i>
 								<span>233</span>
 							</button>
 							<!-- 反对 -->
-							<button class="btn vote-down" onclick="votedown()">
+							<button class="btn no-vote vote-down" onclick="votedown()">
 								<i class="fa fa-caret-down"></i>
 							</button>
 						</span>
@@ -199,6 +202,12 @@
 						
 					</div>
 				</div>
+				
+				<!-- 点击加载更多 -->
+				<div class="add-more card">
+					<button class="btn-addmore">点击加载更多内容</button>
+				</div>
+				
 			</div>
 			<div class="sidebar">
 				<div class="theiaStickySidebar">
