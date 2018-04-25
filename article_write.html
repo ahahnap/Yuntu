@@ -3,11 +3,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>写文章</title>
+		<link rel="stylesheet" href="css/amazeui.css" />
 		<link href="css/fontawesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="css/general.css" />
 		<link rel="stylesheet" href="css/article_write.css" />
+		<link rel="stylesheet" type="text/css" href="css/amazeui.address.css" />
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script src="js/amazeui.js"></script>
+		<script src="js/iscroll.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/address.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			$(function(){
 				/*根据鼠标位置进行样式变化*/
@@ -68,6 +72,23 @@
 					$(".edit-wrapper").addClass("inactive");
 				})
 				
+				/*弹出地址选择窗口*/
+				$("#address1").address({
+					customOutput: true,
+					selectEnd: function(json, address) {
+						for(var key in json) {
+							var $key = $("#address1-fieldset").find("input[name='" + key + "']");
+							$key.val(json[key]);
+							var length = $key.val().length;
+							$key.attr("size", length*2);
+						}
+					}
+				}).on("provTap", function(event, activeli) {
+					console.log(activeli.text());
+				}).on("cityTap", function(event, activeli) {
+					console.log(activeli.text());
+				})
+				
 			});
 		</script>
 	</head>
@@ -102,6 +123,17 @@
 			</div>
 			<!-- 标题 -->
 			<input type="text" name="" class="title-editor" placeholder="请输入标题"/>
+			<!-- 地区 -->
+			<div class="area">
+				<fieldset class="am-form-set" id="address1-fieldset">
+					<input type="text" name="prov" readonly>
+					<input type="text" name="city" readonly>
+					<input type="text" name="district" readonly>
+				</fieldset>
+				<button type="button" id="address1" class="btn-address button">
+					<i class="am-icon am-icon-home"></i> 选择地区
+				</button>
+			</div>
 			<!-- 文本 -->
 			<div class="rich-text-editor">
 				文本编辑器

@@ -140,3 +140,37 @@
 	width: 100%;
 	min-height: 600px;
 }
+
+/*地区选择*/
+.main .area{
+	display: flex;
+	justify-content: space-between;
+}
+
+.main .area fieldset{
+	margin: 0;
+	cursor: default;
+}
+
+.main .area fieldset input{
+	border: none;
+	font-size: 14px;
+	color: #1a1a1a;
+	cursor: default;
+	
+}
+
+.main .area fieldset > input{
+	top: 0;
+}
+
+.main .area .btn-address{
+	color: #666;
+	transition: .2s;
+}
+
+.main .area .btn-address:hover{
+	background: #666;
+	border-color: #fff;
+	color: #fff;
+}
