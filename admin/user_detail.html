@@ -1,9 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 	<head>
-		<meta charset="UTF-8">
-		<title></title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>用户详情 - 云途</title>
+		<meta name="keywords" content="index">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<script src="assets/js/echarts.min.js"></script>
+		<link rel="stylesheet" href="assets/css/amazeui.min.css" />
+		<link rel="stylesheet" href="assets/css/amazeui.datatables.min.css" />
+		<link rel="stylesheet" href="assets/css/app.css">
+		<link rel="stylesheet" href="assets/css/detail.css" />
+		<script src="assets/js/jquery.min.js"></script>
+
 	</head>
-	<body>
+
+	<body data-type="widgets">
+		<script src="assets/js/theme.js"></script>
+		<div class="am-g tpl-g">
+			<!-- 头部 -->
+			<header>
+				<!-- logo -->
+				<div class="am-fl tpl-header-logo">
+					<a href="javascript:;"><img src="../img/logo.png" alt=""></a>
+				</div>
+				<!-- 右侧内容 -->
+				<div class="tpl-header-fluid">
+					<!-- 侧边切换 -->
+					<div class="am-fl tpl-header-switch-button am-icon-list">
+						<span>
+
+                </span>
+					</div>
+					<!-- 搜索 -->
+					<div class="am-fl tpl-header-search">
+						<form class="tpl-header-search-form" action="javascript:;">
+							<button class="tpl-header-search-btn am-icon-search"></button>
+							<input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
+						</form>
+					</div>
+					<!-- 其它功能-->
+					<div class="am-fr tpl-header-navbar">
+						<ul>
+							<!-- 欢迎语 -->
+							<li class="am-text-sm tpl-header-navbar-welcome">
+								<a href="javascript:;">欢迎你, <span>ddreamst</span> </a>
+							</li>
+
+							<!-- 退出 -->
+							<li class="am-text-sm">
+								<a href="javascript:;">
+									<span class="am-icon-sign-out"></span> 退出
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+			</header>
+			<!-- 侧边导航栏 -->
+			<div class="left-sidebar">
+				<!-- 用户信息 -->
+				<div class="tpl-sidebar-user-panel">
+					<div class="tpl-user-panel-slide-toggleable">
+						<div class="tpl-user-panel-profile-picture">
+							<img src="../img/a.jpeg" alt="">
+						</div>
+						<span class="user-panel-logged-in-text">
+			            	<i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+							ddreamst
+			     		</span>
+						<a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span> 账号设置</a>
+					</div>
+				</div>
+
+				<!-- 菜单 -->
+				<ul class="sidebar-nav">
+					<li class="sidebar-nav-link">
+						<a href="#">
+							<i class="iconfont">&#xe62e;</i> 首页
+						</a>
+					</li>
+					<li class="sidebar-nav-link">
+						<a href="#" class="active">
+							<i class="iconfont">&#xe6b3;</i> 用户中心
+						</a>
+					</li>
+					<li class="sidebar-nav-link">
+						<a href="#">
+							<i class="iconfont">&#xe6ad;</i> 问答管理
+						</a>
+					</li>
+					<li class="sidebar-nav-link">
+						<a href="#">
+							<i class="iconfont">&#xe661;</i> 文章管理
+
+						</a>
+					</li>
+					<li class="sidebar-nav-link">
+						<a href="#">
+							<i class="iconfont">&#xe600;</i> 管理日志
+
+						</a>
+					</li>
+
+				</ul>
+			</div>
+
+			<!-- 内容区域 -->
+			<div class="tpl-content-wrapper">
+				<div class="row-content am-cf" style="padding-bottom: 0;">
+					<div class="row am-cf">
+						<div class="am-u-sm-12 am-u-md-8 left-div">
+							<div class="widget am-cf">
+								<div class="widget-head am-cf">
+									<div class="widget-title am-fl">用户动态</div>
+								</div>
+								<!-- 动态内容 -->
+								<div class="dynamic">
+									<div class="list-item">
+										<div class="item-meta">
+											<!-- 赞同了/提出了/发表了/收藏了 -->
+											<span class="meta-title">回答了</span>
+											<!-- 距今时间分/时/日/月/年 -->
+											<span class="meta-time">3小时前</span>
+										</div>
+										<div class="item-content">
+											<!-- 标题 -->
+											<h2 class="content-title">
+												<a href="#">求广州好吃早茶推荐？</a>
+											</h2>
+											<div class="content-inner">
+												<span>
+													说起广东早茶，不得不提“广州三大园林酒家”——南园、北园、泮溪酒家。
+													即便如今的出品，早已大不如前。早茶粤菜的餐厅新秀也是层出不穷，但气派园林经过历史沉淀的气韵是无法复制的。
+													如果有朋友来广州，我依然会推荐他们去上面几家。口味来讲，三家中还算不错的是南园酒家，始于1963年至今半个多世纪了。...
+												</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="dynamic">
+									<div class="list-item">
+										<div class="item-meta">
+											<!-- 赞同了/提出了/发表了/收藏了 -->
+											<span class="meta-title">评论了</span>
+											<!-- 距今时间分/时/日/月/年 -->
+											<span class="meta-time">1天前</span>
+										</div>
+										<div class="item-content">
+											<!-- 标题 -->
+											<h2 class="content-title">
+												<a href="#">文章标题</a>
+											</h2>
+											<div class="content-inner">
+												<div class="content-img">
+													<img src="../img/pic1.png" class="pimg" />
+												</div>
+												<div class="content-text">
+													<span>balabalabalabalabalabalabalabalabalalabalabalabalabalabalabalabalabalalabalabalabalabalabalabalabalabalalabalabalabalabalabalabalabalabalalabalabalabalabalabalabalabalabalalabalabalabalabalabalabalabalabalalabalabalabalabalabalabalabalabalalabalabalabalabalabalabalabalabalalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabalabala...</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<!-- 点击加载更多 -->
+									<div class="add-more card">
+										<button class="btn-addmore">点击加载更多内容</button>
+									</div>
+							</div>
+						</div>
+						<!-- 用户信息 -->
+						<div class="am-u-sm-12 am-u-md-4 right-div">
+							<div class="widget am-cf">
+								<div class="widget-head am-cf">
+									<div class="widget-title am-fl">用户资料</div>
+								</div>
+								<!-- 信息详情 -->
+								<div class="message">
+									<table>
+										<tr>
+											<td class="unit-title">头像</td>
+											<td class="unit-msg">
+												<img src="../img/b.jpg" />
+											</td>
+										</tr>
+										<tr>
+											<td class="unit-title">昵称</td>
+											<td class="unit-msg">ajiana</td>
+										</tr>
+										<tr>
+											<td class="unit-title">性别</td>
+											<td class="unit-msg">男</td>
+										</tr>
+										<tr>
+											<td class="unit-title">介绍</td>
+											<td class="unit-msg">是兄弟就来砍我</td>
+										</tr>
+										<tr>
+											<td class="unit-title">城市</td>
+											<td class="unit-msg">吉林省四平市</td>
+										</tr>
+										<tr>
+											<td class="unit-title">邮箱</td>
+											<td class="unit-msg">ajiana@outlook.com</td>
+										</tr>
+										<tr>
+											<td class="unit-title">生日</td>
+											<td class="unit-msg">2018-01-31</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<script src="assets/js/amazeui.min.js"></script>
+		<script src="assets/js/amazeui.datatables.min.js"></script>
+		<script src="assets/js/dataTables.responsive.min.js"></script>
+		<script src="assets/js/app.js"></script>
+		<script>
+		</script>
+
 	</body>
+
 </html>

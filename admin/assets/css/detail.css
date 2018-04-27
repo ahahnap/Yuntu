@@ -118,3 +118,126 @@
 	margin: 10px auto 0;
 	width: 650px;
 }
+
+/*用户动态*/
+.dynamic{
+	width: 680px;
+	margin: 10px auto;
+}
+
+.dynamic .list-item{
+	position: relative;
+	padding: 16px 20px;
+	border-bottom: 1px solid #e9ecf3;
+}
+
+.dynamic .list-item .item-meta{
+	position: relative;
+}
+
+.dynamic .list-item .item-meta .meta-time{
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.dynamic .list-item .item-content .content-title{
+	margin: 0;
+}
+
+.dynamic .list-item .item-content .content-title a{
+    color: #1a1a1a;
+}
+
+.dynamic .list-item .item-content .content-title a:hover{
+	color: #175199;
+}
+
+.dynamic .list-item .item-content .content-inner{
+	min-height: 100px;
+	max-height: 150px;
+	margin-top: 10px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+}
+
+.dynamic .list-item .item-content .content-inner .content-img{
+	width: 190px;
+	height: 105px;
+	overflow: hidden;
+}
+
+.dynamic .list-item .item-content .content-inner .content-img img{
+	width: inherit;
+	height: auto;
+}
+
+.dynamic .list-item .item-content .content-inner .content-text{
+	width: 446px;
+	height: 100px;
+	margin-left: 10px;
+	overflow: hidden;
+	word-wrap: break-word;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 4;
+	-webkit-box-orient: vertical;
+}
+
+/*点击加载更多*/
+.add-more{
+	height: 50px;
+	color: #aaa;
+}
+
+.add-more .btn-addmore{
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	background: transparent;
+	outline: none;
+}
+
+.add-more .btn-addmore:hover{
+	color: #666;
+}
+
+/*左边大块*/
+.left-div{
+	min-width: 740px;
+}
+
+/*右边大块*/
+.right-div{
+	min-width: 400px;
+}
+
+/*用户信息*/
+.message{
+	width: 380px;
+	margin: 10px auto;
+}
+
+.message tr{
+	display: block;
+	margin: 30px 0;
+}
+
+.message .unit-title{
+	width: 120px;
+	color: #1a1a1a;
+	font-weight: 500;
+}
+
+.message .unit-msg{
+	color: #666;
+}
+
+.message .unit-msg img{
+	width: 100px;
+	height: auto;
+}
