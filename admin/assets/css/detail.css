@@ -241,3 +241,41 @@
 	width: 100px;
 	height: auto;
 }
+
+/*首页量词span*/
+.quantifier{
+	display: inline-block;
+	margin-left: 10px;
+	font-size: 35px;
+}
+
+/*颜色*/
+#div-orange{
+    border: 1px solid #ff9243;
+    border-top: 2px solid #ff9243;
+    background: #ff9243;
+}
+
+#div-purple{
+    border: 1px solid #8e44ad;
+    border-top: 2px solid #8e44ad;
+    background: #8e44ad;
+}
+
+/*首页三小块图标*/
+.ico{
+	font-size: 90px;
+}
+
+.ques-num{
+	color: #fc9d59;
+}
+
+.arti-num{
+	color: #9355ad;
+}
+
+/**/
+.del-after th::after{
+	display: none !important;
+}
