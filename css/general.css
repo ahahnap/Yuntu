@@ -96,3 +96,16 @@
 .add-more .btn-addmore:hover{
 	color: #666;
 }
+
+/*点赞样式*/
+.comments-container .comment-item .no{
+	color: #8590a6;
+}
+
+.comments-container .comment-item .yes{
+	color: #0084ff!important;
+}
+
+.comments-container .comment-item .no:hover{
+	color: #77839c;
+}
