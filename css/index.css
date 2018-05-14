@@ -127,14 +127,14 @@ a{
 	cursor: default;
 }
 
-.top .top-inner .existUser .userIcon{
+/*.top .top-inner .existUser .userIcon{
 	border: none;
 	outline: none;
 }
 
 .top .top-inner .existUser .userIcon:focus~.btnContent{
 	display: block;
-}
+}*/
 
 .top .top-inner .existUser .userIcon img{
 	width: 30px;
@@ -142,7 +142,7 @@ a{
 	border-radius: 3px;
 }
 
-.top .top-inner .existUser .btnContent{
+/*.top .top-inner .existUser .btnContent{
 	position: absolute;
 	top: 55px;
 	right: -85px;
@@ -178,6 +178,17 @@ a{
 
 .top .top-inner .existUser .btnContent .content-inner a:hover{
 	background: #f6f6f6;
+}*/
+
+/*顶部栏改版之后样式*/
+.top .top-inner .existUser a{
+	display: inline-block;
+	margin: auto 7px auto;
+	color: #999;
+}
+
+.top .top-inner .existUser a:hover{
+	color: #666;
 }
 
 /*----------main----------*/
