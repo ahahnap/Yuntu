@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>账号设置 - 云途</title>
+	   	<link rel="stylesheet" href="css/amazeui.css" />
+	    <link rel="stylesheet" href="css/app.css">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/setting.css" />
+	    <script src="js/jquery-3.2.1.min.js"></script>
+	    <script>
+			$(function(){
+				
+				$("#username").blur(function(){
+					if($("#username").val() == ""){
+						$("#tipNameNull").show();
+						$("#tipNameNull").delay(5000).hide(0);
+					}else{
+						$("#tipNameNull").hide();
+					}
+				});
+				
+				$("#oldPwd").blur(function(){
+					/*刁瑞这里ajax一下旧密码对不对*/
+				})
+				
+				var newpwd;
+				$("#newPwd").blur(function(){
+					if($("#newPwd").val().length < 8 || $("#newPwd").val().length > 16){
+						$("#newPwd").val("");
+						$("#tipPwdLen").show();
+						$("#tipPwdLen").delay(5000).hide(0);
+					}else{
+						newpwd = $("#newPwd").val();
+						$("#tipPwdLen").hide();
+					}
+				})
+				
+				var repwd;
+				$("#rePwd").blur(function(){
+					repwd = $("#rePwd").val();
+					if(repwd != newpwd){
+						$("#rePwd").val("");
+						$("#tipPwdUnlike").show();
+						$("#tipPwdUnlike").delay(5000).hide(0);
+					}else{
+						$("#tipPwdUnlike").hide();
+					}
+				})
+				
+			});
+	    </script>
+	</head>
+	<body>
+		<div class="am-g tpl-g">
+	        <div class="tpl-login">
+	            <div class="tpl-login-content main">
+	                <div class="tpl-login-title">账号设置</div>
+	                <span class="tpl-login-content-info">
+	                  	修改你的账号信息
+	              	</span>
+	
+	                <form class="am-form tpl-form-line-form">
+	                    <div class="am-form-group">
+	                        <input type="text" class="tpl-form-input" id="username" value="回显昵称">
+	                    </div>
+	                    <div class="tips name-null" id="tipNameNull">
+							<div class="tip-arrow-border"></div>
+							<div class="tip-arrow-bg"></div>
+							<div class="tip-inner">
+								<i class="fa fa-exclamation-triangle fa-lg"></i>
+								<span>请输入用户名</span>
+							</div>
+						</div>
+	
+	                    <div class="am-form-group">
+	                        <input type="password" class="tpl-form-input" id="oldPwd" placeholder="请输入旧密码">
+	                    </div>
+	                    <div class="tips pwd-error" id="tipPwdError">
+							<div class="tip-arrow-border"></div>
+							<div class="tip-arrow-bg"></div>
+							<div class="tip-inner">
+								<i class="fa fa-exclamation-triangle fa-lg"></i>
+								<span>密码错误</span>
+							</div>
+						</div>
+	
+	                    <div class="am-form-group">
+	                        <input type="password" class="tpl-form-input" id="newPwd" placeholder="请输入新密码">
+	                    </div>
+	                    <div class="tips pwd-len" id="tipPwdLen">
+							<div class="tip-arrow-border"></div>
+							<div class="tip-arrow-bg"></div>
+							<div class="tip-inner">
+								<i class="fa fa-exclamation-triangle fa-lg"></i>
+								<span>请输入 8-16 位密码</span>
+							</div>
+						</div>
+	
+	                    <div class="am-form-group">
+	                        <input type="password" class="tpl-form-input" id="rePwd" placeholder="再次输入新密码">
+	                    </div>
+	                    <div class="tips pwd-unlike" id="tipPwdUnlike">
+							<div class="tip-arrow-border"></div>
+							<div class="tip-arrow-bg"></div>
+							<div class="tip-inner">
+								<i class="fa fa-exclamation-triangle fa-lg"></i>
+								<span>两次密码输入不一致</span>
+							</div>
+						</div>
+	
+	                    <div class="am-form-group">
+	                        <button type="button" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn" style="margin-top: 20px;">提交</button>
+	                    </div>
+	                </form>
+	            </div>
+	        </div>
+    	</div>
+	</body>
+</html>

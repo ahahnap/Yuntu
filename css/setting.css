@@ -1,0 +1,81 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.main{
+	position: relative;
+}
+
+/*提示框*/
+.main .tips{
+	position: absolute;
+	padding: 0 5px;
+	transition: 0.3s;
+	display: none;
+}
+
+.main .tips .tip-arrow-border{
+	border-style: solid;
+	border-width: 5px 5px 5px 0;
+	border-color: transparent;
+	border-right-color: #EA6F5A;
+	position: absolute;
+	top: 13px;
+	left: 0;
+}
+
+.main .tips .tip-arrow-bg{
+	border-style: solid;
+	border-width: 4px 4px 4px 0;
+	border-color: transparent;
+	border-right-color: #ffffff;
+	position: absolute;
+	top: 14px;
+	left: 2.1px;
+}
+
+.main .tips .tip-inner{
+	padding: 5px 10px;
+	border: 1px solid #EA6F5A;
+	border-radius: 4px;
+	background: #ffffff;
+}
+
+.main .tips .tip-inner i{
+	position: absolute;
+	top: 13px;
+	left: 13px;
+	color: #EA6F5A;
+}
+
+.main .tips .tip-inner span{
+	padding: 0 0 0 20px;
+	line-height: 26px;
+	color: #333333;
+	font-size: 15px;
+}
+
+/*用户名不能为空提示框的位置*/
+.main .name-null{
+	top: 61px;
+	right: -163px;
+}
+
+/*密码输入错误*/
+.main .pwd-error{
+	top: 116px;
+	right: -133px;
+}
+
+/*密码长度不对*/
+.main .pwd-len{
+	top: 172px;
+	right: -201px;
+}
+
+/*与上次输入密码不一致*/
+.main .pwd-unlike{
+	top: 227px;
+	right: -206px;
+}
