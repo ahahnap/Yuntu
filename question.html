@@ -71,16 +71,18 @@
 				});
 				
 				/*显示评论按钮*/
-				$(".my-comment").focus(function(){
-					$(this).next().css("display","inline-block");
-					$(this).next().toggleClass("am-animation-scale-up");
+				$(".comment-editor").focusin(function(){
+					$(this).find(".commitInput").removeClass("my-comment");
+					$(this).find(".commitInput").addClass("my-comment-focus");
+					$(this).find(".btn-comment").css("display","inline-block");
+					$(this).find(".btn-comment").toggleClass("am-animation-scale-up");
 				});
 				
 				/*消失评论按钮*/
-				$(".my-comment").blur(function(){
-					$(this).next().css("display","none");
-					$(this).next().toggleClass("am-animation-scale-up");
-				});
+//				$(".comment-editor").focusout(function(){
+//					$(this).children(".btn-comment").css("display","none");
+//					$(this).children(".btn-comment").toggleClass("am-animation-scale-up");
+//				});
 				
 				/*评论点赞*/
 				$(".btn-support").click(function(){
@@ -415,7 +417,7 @@
 								</div>
 								<!-- 添加评论 -->
 								<div class="comment-editor">
-									<input type="text" name="myComment" class="my-comment" placeholder="写下你的评论..." />
+									<input type="text" name="myComment" class="commitInput my-comment" placeholder="写下你的评论..." />
 									<button class="btn-comment button button-blue">评论</button>
 								</div>
 							</div>
